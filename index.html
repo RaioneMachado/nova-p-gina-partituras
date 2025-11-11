@@ -9,23 +9,87 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>+30 partituras + playbacks dos louvores mais tocados</h1>
-            <div class="promo-banner">
-                <p>PROMOÇÃO DE BLACK FRIDAY - Última chance de comprar na promoção</p>
-            </div>
-        </div>
-    </header>
+     <!-- 🔥 Temporizador de Oferta -->
+<div class="timer-bar">
+  <div class="timer-content">
+    ⏰ <span id="timer">15:00</span> — Oferta por tempo limitado
+  </div>
+</div>
 
-    <!-- Seção Hero -->
-    <section class="hero">
+<style>
+  /* ===== BARRA DO TEMPORIZADOR ===== */
+  .timer-bar {
+    background-color: #002b80; /* azul escuro */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    white-space: nowrap; /* impede quebra de linha */
+    overflow: hidden;
+  }
+
+  .timer-content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.1rem;
+  }
+
+  #timer {
+    font-size: 1.3rem;
+  }
+
+  /* Garante que a frase não quebre mesmo em telas pequenas */
+  @media (max-width: 480px) {
+    .timer-content {
+      font-size: 1rem;
+      transform: scale(0.9); /* reduz levemente o tamanho */
+    }
+  }
+</style>
+
+<script>
+  // ====== TEMPORIZADOR (15 MINUTOS) ======
+  let time = 15 * 60; // 15 minutos em segundos
+  const timerEl = document.getElementById("timer");
+
+  function updateTimer() {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+    if (time > 0) {
+      time--;
+    } else {
+      clearInterval(timerInterval);
+      timerEl.textContent = "00:00";
+    }
+  }
+
+  updateTimer(); // inicializa
+  const timerInterval = setInterval(updateTimer, 1000);
+</script>
+
+    <!-- Seção Violão em Destaque -->
+    <section class="featured-violao">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="images/partitura-hero.jpg" alt="Partituras Gospel">
+            <div class="violao-content">
+                <div class="violao-image">
+                    <img src="" alt="Violão em Destaque">
                 </div>
-          
+                <div class="violao-text">
+                    <h2>+30 partituras + playbacks dos louvores mais tocados</h2>
+                    <p>As melhores partituras em um só lugar, PROMOÇÃO DE BLACK FRIDAY</p>
+                  
+                </div>
             </div>
         </div>
     </section>
