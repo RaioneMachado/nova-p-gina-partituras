@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partituras Gospel - 30 Louvores Mais Tocados</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Partituras Gospel</h1>
+            <div class="promo-banner">
+                <p>PROMOÇÃO DE BLACK FRIDAY - Última chance de comprar na promoção</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="images/partitura-hero.jpg" alt="Partituras Gospel">
+                </div>
+                <div class="hero-text">
+                    <h2>30 Partituras dos Louvores Mais Tocados + 3 de Brinde</h2>
+                    <p>Material completo para músicos cristãos</p>
+                    <button class="btn-primary" id="viewSongsBtn">Ver Músicas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Instrumentos -->
+    <section class="instruments" id="instruments">
+        <div class="container">
+            <h2>Instrumentos Individuais</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="instrumentCarousel">
+                    <!-- Instrumentos adicionados diretamente no HTML -->
+                    <div class="instrument-card" data-instrument="flauta">
+                        <div class="instrument-img">
+                            <img src="images/flauta.png" alt="Flauta">
+                        </div>
+                        <h3>Flauta</h3>
+                        <p>Partituras para flauta</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/flauta">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="trompete">
+                        <div class="instrument-img">
+                            <img src="images/trompete.png" alt="Trompete">
+                        </div>
+                        <h3>Trompete</h3>
+                        <p>Partituras para trompete</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/trompete">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="trombone">
+                        <div class="instrument-img">
+                            <img src="images/trombone.png" alt="Trombone">
+                        </div>
+                        <h3>Trombone</h3>
+                        <p>Partituras para trombone</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/trombone">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="sax-tenor">
+                        <div class="instrument-img">
+                            <img src="images/sax tenor.png" alt="Sax Tenor">
+                        </div>
+                        <h3>Sax Tenor</h3>
+                        <p>Partituras para sax tenor</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/sax-tenor">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="sax-alto">
+                        <div class="instrument-img">
+                            <img src="images/sax-alto.jpg" alt="Sax Alto">
+                        </div>
+                        <h3>Sax Alto</h3>
+                        <p>Partituras para sax alto</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/sax-alto">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="sax-soprano">
+                        <div class="instrument-img">
+                            <img src="images/sax-soprano.jpg" alt="Sax Soprano">
+                        </div>
+                        <h3>Sax Soprano</h3>
+                        <p>Partituras para sax soprano</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/sax-soprano">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="piano">
+                        <div class="instrument-img">
+                            <img src="images/piano.jpg" alt="Piano">
+                        </div>
+                        <h3>Piano</h3>
+                        <p>Partituras para piano</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/piano">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="teclado">
+                        <div class="instrument-img">
+                            <img src="images/teclado.jpg" alt="Teclado">
+                        </div>
+                        <h3>Teclado</h3>
+                        <p>Partituras para teclado</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/teclado">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="clarinete">
+                        <div class="instrument-img">
+                            <img src="images/clarinete.png" alt="Clarinete">
+                        </div>
+                        <h3>Clarinete</h3>
+                        <p>Partituras para clarinete</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/clarinete">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="viola">
+                        <div class="instrument-img">
+                            <img src="images/viola.jpg" alt="Viola">
+                        </div>
+                        <h3>Viola</h3>
+                        <p>Partituras para viola</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/viola">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="violino">
+                        <div class="instrument-img">
+                            <img src="images/violino.jpg" alt="Violino">
+                        </div>
+                        <h3>Violino</h3>
+                        <p>Partituras para violino</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/violino">Comprar Agora</button>
+                    </div>
+
+                    <div class="instrument-card" data-instrument="violoncelo">
+                        <div class="instrument-img">
+                            <img src="images/violoncelo.jpg" alt="Violoncelo">
+                        </div>
+                        <h3>Violoncelo</h3>
+                        <p>Partituras para violoncelo</p>
+                        <button class="btn-buy" data-link="https://exemplo.com/comprar/violoncelo">Comprar Agora</button>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+                <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Violão em Destaque -->
+    <section class="featured-violao">
+        <div class="container">
+            <div class="violao-content">
+                <div class="violao-image">
+                    <img src="images/violao-destaque.jpg" alt="Violão em Destaque">
+                </div>
+                <div class="violao-text">
+                    <h2>Partituras para Violão</h2>
+                    <p>30 partituras dos louvores mais tocadas + 3 de brinde, especialmente arranjadas para violão. Aprenda a tocar seus louvores favoritos com facilidade!</p>
+                    <button class="btn-buy" data-link="https://exemplo.com/comprar/violao">Comprar Agora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Combos -->
+    <section class="combos">
+        <div class="container">
+            <h2>Combos Especiais</h2>
+            <div class="combos-grid">
+                <div class="combo-card">
+                    <div class="combo-img">
+                        <img src="images/combo-4.jpg" alt="Combo 4 Instrumentos">
+                    </div>
+                    <h3>Combo 4 Instrumentos</h3>
+                    <p>Flauta, Sax Alto, Trompete e Violino</p>
+                    <button class="btn-buy" data-link="https://exemplo.com/comprar/combo-4">Comprar Agora</button>
+                </div>
+                <div class="combo-card featured">
+                    <div class="combo-img">
+                        <img src="images/completo.jpg" alt="Pacote Completo">
+                    </div>
+                    <h3>PACOTE COMPLETO</h3>
+                    <p>Todos os 9 instrumentos em um único pacote</p>
+                    <button class="btn-buy" data-link="https://exemplo.com/comprar/completo">Comprar Agora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Garantia -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-content">
+                <div class="guarantee-image">
+                    <img src="images/garantia.jpg" alt="Garantia de Satisfação">
+                </div>
+                <div class="guarantee-text">
+                    <h2>Garantia de Satisfação</h2>
+                    <p>DEVOLVEREMOS cada centavo do seu DINHEIRO se não gostar do material preparado.</p>
+                    <div class="guarantee-badge">
+                        <span>100%</span>
+                        <span>Garantia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como receberei as partituras?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>As partituras são enviadas por email em formato PDF imediatamente após a confirmação do pagamento.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Posso usar as partituras em minha igreja?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! As partituras são licenciadas para uso pessoal e em ministérios musicais.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>E se eu não gostar do material?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oferecemos garantia de 7 dias. Se não ficar satisfeito, devolvemos 100% do seu dinheiro.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>As partituras são para iniciantes?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>As partituras são adaptadas para diferentes níveis, desde iniciantes até músicos avançados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão Flutuante -->
+    <div class="floating-btn" id="floatingBtn">
+        <span>Escolher Instrumento</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

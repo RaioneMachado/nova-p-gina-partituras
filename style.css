@@ -1,0 +1,886 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #357ABD;
+    --accent-color: #2E5F9B;
+    --text-color: #f5f5f5;
+    --dark-bg: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.8);
+    --light-primary: rgba(74, 144, 226, 0.15);
+    --green-color: #10B981;
+    --green-dark: #059669;
+    --green-light: #34D399;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #1e293b, #0f172a);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(74, 144, 226, 0.3), transparent 70%),
+        radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.2), transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(74, 144, 226, 0.25), transparent 60%);
+    pointer-events: none;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.promo-banner {
+    text-align: center;
+    background: rgba(74, 144, 226, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.promo-banner p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* Seção Hero */
+.hero {
+    padding: 40px 0 60px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(74, 144, 226, 0.25), transparent 50%),
+        radial-gradient(circle at 90% 40%, rgba(74, 144, 226, 0.2), transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(74, 144, 226, 0.3), transparent 60%);
+    animation: pulse 8s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-text {
+    text-align: center;
+    max-width: 600px;
+}
+
+.hero-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--green-color), var(--green-dark));
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}
+
+/* Seção Instrumentos - Carousel Centralizado */
+.instruments {
+    padding: 60px 0;
+    background: var(--dark-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.instruments::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 70% 30%, rgba(74, 144, 226, 0.2), transparent 60%),
+        radial-gradient(circle at 30% 70%, rgba(74, 144, 226, 0.25), transparent 50%);
+    pointer-events: none;
+}
+
+.instruments h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--primary-color);
+    position: relative;
+    font-weight: 600;
+}
+
+.instruments h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Carousel Centralizado - CORRIGIDO */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    gap: 25px;
+    padding: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.instrument-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    position: relative;
+    border: 1px solid rgba(74, 144, 226, 0.3);
+    width: 280px;
+    flex-shrink: 0;
+    transform: scale(0.95);
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+.instrument-card.active {
+    transform: scale(1);
+    opacity: 1;
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 35px rgba(74, 144, 226, 0.3);
+}
+
+.instrument-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(74, 144, 226, 0.4);
+    border-color: var(--primary-color);
+}
+
+.instrument-img {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.instrument-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.instrument-card:hover .instrument-img img {
+    transform: scale(1.15);
+}
+
+.instrument-card h3 {
+    padding: 20px 20px 8px;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: center;
+}
+
+.instrument-card p {
+    padding: 0 20px 15px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.btn-buy {
+    width: calc(100% - 30px);
+    margin: 0 15px 15px;
+    padding: 12px;
+    background: linear-gradient(to right, var(--green-color), var(--green-dark));
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+.btn-buy:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(16, 185, 129, 0.5);
+    background: linear-gradient(to right, var(--green-light), var(--green-color));
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(74, 144, 226, 0.9);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+/* Indicadores do Carousel */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(74, 144, 226, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Seção Violão em Destaque */
+.featured-violao {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    position: relative;
+}
+
+.featured-violao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 60% 40%, rgba(74, 144, 226, 0.15), transparent 60%),
+        radial-gradient(circle at 40% 60%, rgba(74, 144, 226, 0.1), transparent 50%);
+    pointer-events: none;
+}
+
+.violao-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.violao-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.violao-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.violao-text {
+    background: rgba(30, 41, 59, 0.9);
+    padding: 40px 30px 30px;
+    margin-top: -60px;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.violao-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.violao-text p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+.violao-text .btn-buy {
+    margin: 0;
+    width: 100%;
+    max-width: 250px;
+}
+
+/* Seção Combos */
+.combos {
+    padding: 60px 0;
+    background: var(--dark-bg);
+    position: relative;
+}
+
+.combos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(74, 144, 226, 0.25), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(74, 144, 226, 0.2), transparent 50%);
+    pointer-events: none;
+}
+
+.combos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--primary-color);
+    position: relative;
+    font-weight: 600;
+}
+
+.combos h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.combos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.combo-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 1px solid rgba(74, 144, 226, 0.3);
+}
+
+.combo-card.featured {
+    border: 2px solid var(--primary-color);
+    position: relative;
+}
+
+.combo-card.featured::before {
+    content: 'MAIS VENDIDO';
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 5px 30px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.combo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(74, 144, 226, 0.2);
+    border-color: var(--primary-color);
+}
+
+.combo-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.combo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.combo-card:hover .combo-img img {
+    transform: scale(1.1);
+}
+
+.combo-card h3 {
+    padding: 20px 20px 10px;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.combo-card p {
+    padding: 0 20px 20px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.combo-card .btn-buy {
+    margin: 0 20px 20px;
+    width: calc(100% - 40px);
+}
+
+/* Seção Garantia */
+.guarantee {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    position: relative;
+}
+
+.guarantee::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.2), transparent 70%),
+        radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.25), transparent 60%);
+    pointer-events: none;
+}
+
+.guarantee-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.guarantee-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.guarantee-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.guarantee-text {
+    text-align: center;
+}
+
+.guarantee-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.guarantee-text p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.guarantee-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.guarantee-badge span:first-child {
+    font-size: 1.8rem;
+}
+
+/* Seção FAQ */
+.faq {
+    padding: 60px 0;
+    background: var(--dark-bg);
+    position: relative;
+}
+
+.faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 60% 40%, rgba(74, 144, 226, 0.2), transparent 60%),
+        radial-gradient(circle at 40% 60%, rgba(74, 144, 226, 0.25), transparent 50%);
+    pointer-events: none;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.faq-question h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-answer p {
+    padding: 0 0 20px;
+    opacity: 0.9;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+/* Botão Flutuante */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--green-color);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.5);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.floating-btn:hover {
+    transform: translateX(-50%) translateY(-5px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.7);
+    background: var(--green-dark);
+}
+
+/* Responsividade - CORREÇÃO MOBILE */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .hero-image {
+        width: 50%;
+    }
+    
+    .hero-text {
+        width: 50%;
+        text-align: left;
+        padding-left: 30px;
+    }
+    
+    .hero-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .violao-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    
+    .violao-image {
+        width: 50%;
+        margin-top: 0;
+    }
+    
+    .violao-text {
+        width: 50%;
+        margin-top: 0;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: left;
+    }
+    
+    .guarantee-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+    }
+    
+    .guarantee-image {
+        width: 40%;
+    }
+    
+    .guarantee-text {
+        width: 60%;
+        text-align: left;
+    }
+}
+
+/* CORREÇÃO MOBILE - CAROUSEL FUNCIONAL */
+@media (max-width: 767px) {
+    .carousel-container {
+        padding: 15px 0;
+    }
+    
+    .carousel-track {
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .instrument-card {
+        width: 280px;
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    
+    .instrument-card.active {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .carousel-btn.prev {
+        left: 5px;
+    }
+    
+    .carousel-btn.next {
+        right: 5px;
+    }
+    
+    /* Garantir que o carousel tenha espaço para scroll */
+    .carousel-container {
+        overflow: visible;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-btn {
+        width: 90%;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+    
+    .instrument-card {
+        width: 260px;
+    }
+    
+    .violao-text {
+        margin-top: -40px;
+        padding: 30px 20px 20px;
+    }
+    
+    .violao-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .combos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .instrument-card {
+        width: 240px;
+    }
+}
