@@ -36,7 +36,7 @@
 
 <section class="instrumentos-sec" id="instruments">
   <h2>Instrumentos Individuais</h2>
-  <p class="hint">Arraste para o lado 👉 ou use as setas</p>
+  <p class="hint">Arraste para o lado 👉</p>
 
   <div class="instrumentos-wrapper">
     <button class="seta prev">❮</button>
@@ -364,6 +364,237 @@
             </div>
         </div>
     </section>
+
+<!-- 🎵 SEÇÃO LISTA DE MÚSICAS -->
+<section class="musics-section" id="musics">
+  <div class="musics-container">
+    <h2>🎶 30 Partituras + Bônus Exclusivos</h2>
+    <p class="subtitle">Lista das Músicas Incluídas — As mais tocadas!</p>
+    <p class="hint">Clique nas setas👉</p>
+
+    <div class="musics-carousel">
+      <button id="prevMusic" class="music-btn prev">❮</button>
+
+      <div class="musics-track" id="musicTrack">
+        <div class="music-card">1000 Graus — Renascer Praise</div>
+        <div class="music-card">A Bênção — Gabriel Guedes e Nívea Soares</div>
+        <div class="music-card">Agnus Dei — Gabriela Rocha</div>
+        <div class="music-card">Além do Rio Azul — Voz da Verdade</div>
+        <div class="music-card">Bondade de Deus — Isaías Saad</div>
+        <div class="music-card">Creio Que Tu És a Cura — Gabriela Rocha</div>
+        <div class="music-card">Deserto — Maria Marçal</div>
+        <div class="music-card">É Tudo Sobre Você — Morada</div>
+        <div class="music-card">Espírito Santo — Fernanda Brum</div>
+        <div class="music-card">Eu Te Agradeço — Preto no Branco</div>
+        <div class="music-card">I Speak Jesus — Charity Gayle</div>
+        <div class="music-card">Jeová Jireh — Aline Barros</div>
+        <div class="music-card">Lugar Secreto — Gabriela Rocha</div>
+        <div class="music-card">Maranata — Avivah</div>
+        <div class="music-card">Me Atraiu — Gabriela Rocha</div>
+        <div class="music-card">Ninguém Explica Deus — Preto no Branco</div>
+        <div class="music-card">O Escudo — Voz da Verdade</div>
+        <div class="music-card">Oceanos — Ana Nóbrega</div>
+        <div class="music-card">Pode Morar Aqui — Theo Rubia</div>
+        <div class="music-card">Pra Sempre — Avivah</div>
+        <div class="music-card">Quero Conhecer Jesus — Alessandro Vilas Boas</div>
+        <div class="music-card">Renova-me — Aline Barros</div>
+        <div class="music-card">Rompendo em Fé — Comunidade da Zona Sul</div>
+        <div class="music-card">Santo Espírito — Renascer Praise</div>
+        <div class="music-card">Toda Terra — Gabriela Rocha</div>
+        <div class="music-card">Todavia Me Alegrarei — Samuel Messias</div>
+        <div class="music-card">Tu És Águas Purificadoras — Fhop Music</div>
+        <div class="music-card">Vitorioso És — Emi Sousa feat. André Aquino</div>
+        <div class="music-card">Yeshua — Fernandinho</div>
+        <div class="music-card">Yeshua — Fernandinho e Heloísa Rosa</div>
+      </div>
+
+      <button id="nextMusic" class="music-btn next">❯</button>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ====== SEÇÃO LISTA DE MÚSICAS ====== */
+.musics-section {
+  padding: 80px 20px;
+  background: linear-gradient(145deg, #0b1430 0%, #12214a 100%);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.musics-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.musics-section::before,
+.musics-section::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(74, 144, 226, 0.3), transparent);
+  filter: blur(80px);
+  z-index: 1;
+}
+
+.musics-section::before {
+  top: -80px;
+  left: -80px;
+}
+.musics-section::after {
+  bottom: -80px;
+  right: -80px;
+}
+
+.musics-section h2 {
+  font-size: 2.3rem;
+  color: var(--primary-color, #4a90e2);
+  margin-bottom: 10px;
+  text-shadow: 0 0 12px rgba(74, 144, 226, 0.4);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 45px;
+}
+
+/* ====== CARROSSEL ====== */
+.musics-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.musics-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0 30px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.musics-track::-webkit-scrollbar {
+  display: none;
+}
+
+.music-card {
+  flex: 0 0 260px;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 22px 18px;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  scroll-snap-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.music-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: rgba(74, 144, 226, 0.25);
+  border-color: var(--primary-color, #4a90e2);
+  box-shadow: 0 0 25px rgba(74, 144, 226, 0.4);
+}
+
+/* ====== BOTÕES ====== */
+.music-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(74, 144, 226, 0.9);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+}
+
+.music-btn:hover {
+  background: rgba(74, 144, 226, 1);
+  box-shadow: 0 0 25px rgba(74, 144, 226, 0.7);
+}
+
+.music-btn.prev {
+  left: 10px;
+}
+
+.music-btn.next {
+  right: 10px;
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 768px) {
+  .musics-section {
+    padding: 60px 0;
+  }
+
+  .musics-track {
+    gap: 10px;
+    padding: 0 0 40px;
+  }
+
+  .music-card {
+    flex: 0 0 100%;
+    border-radius: 0;
+    font-size: 1rem;
+    padding: 24px 18px;
+    box-shadow: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .music-card:hover {
+    transform: none;
+    background: rgba(74, 144, 226, 0.15);
+  }
+
+  .music-btn {
+    bottom: 15px;
+    top: auto;
+    transform: none;
+    font-size: 1.8rem;
+  }
+
+  .music-btn.prev {
+    left: 20%;
+  }
+
+  .music-btn.next {
+    right: 20%;
+  }
+}
+</style>
+
+<script>
+const track = document.getElementById("musicTrack");
+const btnPrev = document.getElementById("prevMusic");
+const btnNext = document.getElementById("nextMusic");
+
+btnNext.addEventListener("click", () => {
+  track.scrollBy({ left: 300, behavior: "smooth" });
+});
+
+btnPrev.addEventListener("click", () => {
+  track.scrollBy({ left: -300, behavior: "smooth" });
+});
+</script>
+
+
 
     <!-- Seção Garantia -->
     <section class="guarantee">
