@@ -34,6 +34,7 @@
         </div>
     </section>
 
+<!-- SEÇÃO INSTRUMENTOS -->
 <section class="instrumentos-sec" id="instruments">
   <h2>Instrumentos Individuais</h2>
   <p class="hint">Arraste para o lado 👉</p>
@@ -405,7 +406,7 @@
   <div class="musics-container">
     <h2>🎶 30 Partituras + Bônus Exclusivos</h2>
     <p class="subtitle">Lista das Músicas Incluídas — As mais tocadas!</p>
-    <p class="hint">Clique nas setas👉</p>
+    <p class="hint">Clique nas setas ou arraste para os lados👉</p>
 
     <div class="musics-carousel">
       <button id="prevMusic" class="music-btn prev">❮</button>
@@ -818,11 +819,25 @@ btnPrev.addEventListener("click", () => {
 </section>
 
 
-    <!-- Botão Flutuante -->
-    <div class="floating-btn" id="floatingBtn">
-        <span>Escolher Instrumento</span>
-    </div>
+<!-- BOTÃO FLUTUANTE -->
+<div class="floating-btn" id="goToInstruments">
+  <span>🎵 Escolher Instrumento</span>
+</div>
+
 
     <script src="script.js"></script>
+    <script>
+document.querySelector('.floating-btn').addEventListener('click', function() {
+  const section = document.querySelector('#instruments');
+  section.scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+<script>
+document.getElementById('viewSongsBtn').addEventListener('click', function() {
+  const section = document.getElementById('musics');
+  section.scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+
 </body>
 </html>
