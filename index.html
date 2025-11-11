@@ -650,50 +650,173 @@ btnPrev.addEventListener("click", () => {
         </div>
     </section>
 
-    <!-- Seção FAQ -->
-    <section class="faq">
-        <div class="container">
-            <h2>Perguntas Frequentes</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Como receberei as partituras?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>As partituras são enviadas por email em formato PDF imediatamente após a confirmação do pagamento.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Posso usar as partituras em minha igreja?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim! As partituras são licenciadas para uso pessoal e em ministérios musicais.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>E se eu não gostar do material?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Oferecemos garantia de 7 dias. Se não ficar satisfeito, devolvemos 100% do seu dinheiro.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>As partituras são para iniciantes?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>As partituras são adaptadas para diferentes níveis, desde iniciantes até músicos avançados.</p>
-                    </div>
-                </div>
-            </div>
+ <!-- SEÇÃO FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2>Perguntas Frequentes</h2>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Como receberei as partituras?</h3>
+          <span class="faq-toggle">+</span>
         </div>
-    </section>
+        <div class="faq-answer">
+          <p>As partituras são enviadas por email em formato PDF imediatamente após a confirmação do pagamento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Posso usar as partituras em minha igreja?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Sim! As partituras são licenciadas para uso pessoal e em ministérios musicais.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>E se eu não gostar do material?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Oferecemos garantia de 7 dias. Se não ficar satisfeito, devolvemos 100% do seu dinheiro.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>As partituras são para iniciantes?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>As partituras são adaptadas para diferentes níveis, desde iniciantes até músicos avançados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* ====== FAQ SECTION ====== */
+    .faq {
+      background: linear-gradient(145deg, #0b1430, #101d3d);
+      padding: 80px 20px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .faq h2 {
+      font-size: 2.2rem;
+      margin-bottom: 50px;
+      color: var(--primary-color, #4a90e2);
+      text-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .faq-item.active {
+      background: rgba(74, 144, 226, 0.15);
+      border-color: var(--primary-color, #4a90e2);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 22px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .faq-question h3 {
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .faq-toggle {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: var(--primary-color, #4a90e2);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+      color: #fff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      padding: 0 22px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 12px 22px 20px;
+    }
+
+    .faq-answer p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ====== RESPONSIVO ====== */
+    @media (max-width: 768px) {
+      .faq {
+        padding: 60px 15px;
+      }
+
+      .faq h2 {
+        font-size: 1.9rem;
+      }
+
+      .faq-question h3 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <script>
+    // ====== JS EMBUTIDO DO FAQ ======
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      item.querySelector(".faq-question").addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+
+        // Fecha todos os outros
+        faqItems.forEach((el) => el.classList.remove("active"));
+
+        // Abre o clicado
+        if (!isActive) {
+          item.classList.add("active");
+        }
+      });
+    });
+  </script>
+</section>
+
 
     <!-- Botão Flutuante -->
     <div class="floating-btn" id="floatingBtn">
