@@ -168,7 +168,7 @@ header h1 {
     box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
 }
 
-/* Seção Instrumentos - Carousel Centralizado */
+/* Seção Instrumentos - CAROUSEL TOTALMENTE CORRIGIDO */
 .instruments {
     padding: 60px 0;
     background: var(--dark-bg);
@@ -208,68 +208,47 @@ header h1 {
     border-radius: 2px;
 }
 
-/* Carousel Centralizado - CORRIGIDO */
+/* CAROUSEL SIMPLIFICADO E FUNCIONAL */
 .carousel-container {
     position: relative;
-    overflow: hidden;
-    padding: 20px 0;
-    margin: 0 auto;
-    max-width: 1200px;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    gap: 25px;
+    transition: transform 0.5s ease;
+    gap: 20px;
     padding: 20px;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 .instrument-card {
     background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
-    transition: all 0.3s ease;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    position: relative;
     border: 1px solid rgba(74, 144, 226, 0.3);
     width: 280px;
     flex-shrink: 0;
-    transform: scale(0.95);
-    opacity: 0.8;
-    transition: all 0.4s ease;
+    min-height: 380px;
 }
 
 .instrument-card.active {
-    transform: scale(1);
-    opacity: 1;
     border-color: var(--primary-color);
     box-shadow: 0 15px 35px rgba(74, 144, 226, 0.3);
-}
-
-.instrument-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(74, 144, 226, 0.4);
-    border-color: var(--primary-color);
 }
 
 .instrument-img {
     height: 200px;
     overflow: hidden;
-    position: relative;
 }
 
 .instrument-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.instrument-card:hover .instrument-img img {
-    transform: scale(1.15);
 }
 
 .instrument-card h3 {
@@ -304,7 +283,6 @@ header h1 {
 .btn-buy:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(16, 185, 129, 0.5);
-    background: linear-gradient(to right, var(--green-light), var(--green-color));
 }
 
 .carousel-btn {
@@ -330,18 +308,16 @@ header h1 {
 .carousel-btn:hover {
     background: var(--primary-color);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
 }
 
 .carousel-btn.prev {
-    left: 20px;
+    left: 10px;
 }
 
 .carousel-btn.next {
-    right: 20px;
+    right: 10px;
 }
 
-/* Indicadores do Carousel */
 .carousel-indicators {
     display: flex;
     justify-content: center;
@@ -750,7 +726,7 @@ header h1 {
     background: var(--green-dark);
 }
 
-/* Responsividade - CORREÇÃO MOBILE */
+/* RESPONSIVIDADE CORRIGIDA */
 @media (min-width: 768px) {
     header h1 {
         font-size: 2.2rem;
@@ -810,32 +786,25 @@ header h1 {
     }
 }
 
-/* CORREÇÃO MOBILE - CAROUSEL FUNCIONAL */
+/* MOBILE - CAROUSEL FUNCIONAL */
 @media (max-width: 767px) {
     .carousel-container {
-        padding: 15px 0;
+        padding: 0 60px;
     }
     
     .carousel-track {
         gap: 15px;
-        padding: 15px;
+        padding: 10px;
     }
     
     .instrument-card {
         width: 280px;
-        transform: scale(0.9);
-        opacity: 0.7;
-    }
-    
-    .instrument-card.active {
-        transform: scale(1);
-        opacity: 1;
     }
     
     .carousel-btn {
         width: 40px;
         height: 40px;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
     
     .carousel-btn.prev {
@@ -845,14 +814,17 @@ header h1 {
     .carousel-btn.next {
         right: 5px;
     }
-    
-    /* Garantir que o carousel tenha espaço para scroll */
-    .carousel-container {
-        overflow: visible;
-    }
 }
 
 @media (max-width: 480px) {
+    .carousel-container {
+        padding: 0 50px;
+    }
+    
+    .instrument-card {
+        width: 260px;
+    }
+    
     .floating-btn {
         width: 90%;
         padding: 12px 20px;
@@ -861,10 +833,6 @@ header h1 {
     
     .hero-text h2 {
         font-size: 1.5rem;
-    }
-    
-    .instrument-card {
-        width: 260px;
     }
     
     .violao-text {
@@ -879,8 +847,24 @@ header h1 {
     .combos-grid {
         grid-template-columns: 1fr;
     }
-    
-    .instrument-card {
-        width: 240px;
-    }
+}
+/* Remover as setas de navegação do carrossel */
+#prevBtn,
+#nextBtn {
+  display: none !important;
+}
+/* Texto de dica "Arraste para o lado" */
+.swipe-hint {
+  text-align: center;
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 10px;
+  font-style: italic;
+  display: none; /* escondido no desktop */
+}
+
+@media (max-width: 768px) {
+  .swipe-hint {
+    display: block; /* mostra apenas no mobile */
+  }
 }
