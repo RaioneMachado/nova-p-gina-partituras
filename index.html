@@ -272,7 +272,7 @@ btnPrev.addEventListener("click", () => {
                 </div>
                 <div class="violao-text">
                     <h2>Partituras para Violão</h2>
-                    <p>30 partituras dos louvores mais tocadas + 3 de brinde, especialmente arranjadas para violão. Aprenda a tocar seus louvores favoritos com facilidade!</p>
+                    <p>30 partituras dos louvores mais tocadas + 3 de brinde, especialmente arranjadas para violão!</p>
                     <button class="btn-buy" data-link="https://exemplo.com/comprar/violao">Comprar Agora</button>
                 </div>
             </div>
@@ -649,20 +649,23 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="images/flauta.png" alt="Flauta">
         <h3>Flauta</h3>
         <p>Partituras para flauta</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
       <div class="instrumento-card">
-        <img src="images/teclado.png" alt="Flauta">
+        <img src="images/teclado.png" alt="Teclado">
         <h3>Teclado</h3>
         <p>Partituras para teclado</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
       <div class="instrumento-card">
-        <img src="images/piano.png" alt="Flauta">
+        <img src="images/piano.png" alt="Piano">
         <h3>Piano</h3>
-        <p>Partituras para Piano</p>
+        <p>Partituras para piano</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
@@ -670,6 +673,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="images/trompete.png" alt="Trompete">
         <h3>Trompete</h3>
         <p>Partituras para trompete</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
@@ -677,6 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="images/trombone.png" alt="Trombone">
         <h3>Trombone</h3>
         <p>Partituras para trombone</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
@@ -684,20 +689,23 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="images/sax tenor.png" alt="Sax Tenor">
         <h3>Sax Tenor</h3>
         <p>Partituras para sax tenor</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
       <div class="instrumento-card">
-        <img src="images/sax tenor.png" alt="Sax Alto">
+        <img src="images/sax alto.png" alt="Sax Alto">
         <h3>Sax Alto</h3>
         <p>Partituras para sax alto</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
       <div class="instrumento-card">
-        <img src="images/sax tenor.png" alt="Sax Alto">
+        <img src="images/sax soprano.png" alt="Sax Soprano">
         <h3>Sax Soprano</h3>
         <p>Partituras para sax soprano</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
@@ -705,20 +713,23 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="images/violino.png" alt="Violino">
         <h3>Violino</h3>
         <p>Partituras para violino</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
       <div class="instrumento-card">
-        <img src="images/viola.png" alt="Violino">
+        <img src="images/viola.png" alt="Viola">
         <h3>Viola</h3>
-        <p>Partituras para Viola</p>
+        <p>Partituras para viola</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
 
       <div class="instrumento-card">
-        <img src="images/violoncelo.png" alt="Violino">
+        <img src="images/violoncelo.png" alt="Violoncelo">
         <h3>Violoncelo</h3>
-        <p>Partituras para Violoncelo</p>
+        <p>Partituras para violoncelo</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
         <button class="btn-buy">Comprar Agora</button>
       </div>
     </div>
@@ -727,9 +738,6 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 
   <style>
-    /* ===========================
-       SEÇÃO DE INSTRUMENTOS
-    ============================ */
     .instrumentos-sec {
       background: #0f172a;
       color: #fff;
@@ -751,9 +759,6 @@ document.addEventListener('DOMContentLoaded', () => {
       font-size: 0.9rem;
     }
 
-    /* ===========================
-       CONTAINER DO CARROSSEL
-    ============================ */
     .instrumentos-wrapper {
       position: relative;
       max-width: 1100px;
@@ -778,9 +783,6 @@ document.addEventListener('DOMContentLoaded', () => {
       display: none;
     }
 
-    /* ===========================
-       CARDS
-    ============================ */
     .instrumento-card {
       flex: 0 0 260px;
       background: #1e293b;
@@ -810,17 +812,28 @@ document.addEventListener('DOMContentLoaded', () => {
     .instrumento-card p {
       color: #ccc;
       font-size: 0.9rem;
-      margin-bottom: 15px;
+      margin-bottom: 8px;
     }
 
-    .instrumento-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(74, 168, 255, 0.6);
-      z-index: 10;
+    .preco {
+      margin-bottom: 10px;
+    }
+
+    .preco .antigo {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.9rem;
+      margin-right: 6px;
+    }
+
+    .preco .atual {
+      color: #22c55e;
+      font-weight: bold;
+      font-size: 1rem;
     }
 
     .btn-buy {
-      background: linear-gradient(90deg, #4aa8ff, #007bff);
+      background: linear-gradient(90deg, #22c55e, #16a34a);
       color: white;
       border: none;
       border-radius: 8px;
@@ -831,12 +844,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .btn-buy:hover {
       transform: scale(1.05);
-      background: linear-gradient(90deg, #007bff, #4aa8ff);
+      background: linear-gradient(90deg, #16a34a, #22c55e);
     }
 
-    /* ===========================
-       SETAS DE NAVEGAÇÃO
-    ============================ */
     .seta {
       position: absolute;
       top: 50%;
@@ -866,9 +876,6 @@ document.addEventListener('DOMContentLoaded', () => {
       right: -15px;
     }
 
-    /* ===========================
-       MOBILE RESPONSIVO
-    ============================ */
     @media (max-width: 768px) {
       .instrumento-card {
         flex: 0 0 80%;
@@ -922,7 +929,6 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollToCard(currentIndex);
     });
 
-    // Ajuste suave ao rolar manualmente
     carousel.addEventListener("scroll", () => {
       const scrollCenter = carousel.scrollLeft + carousel.offsetWidth / 2;
       let closestIndex = 0;
@@ -940,7 +946,6 @@ document.addEventListener('DOMContentLoaded', () => {
       currentIndex = closestIndex;
     });
 
-    // Suporte ao toque no mobile
     let startX;
     carousel.addEventListener("touchstart", (e) => {
       startX = e.touches[0].clientX;
@@ -961,31 +966,67 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   </script>
 </section>
+
     
-    <!-- Seção Combos -->
-    <section class="combos">
-        <div class="container">
-            <h2>Combos Especiais</h2>
-            <div class="combos-grid">
-                <div class="combo-card">
-                    <div class="combo-img">
-                        <img src="images/combo 4.png" alt="Combo 4 Instrumentos">
-                    </div>
-                    <h3>Combo 4 Instrumentos</h3>
-                    <p>Flauta, Sax Alto, Trompete e Violino</p>
-                    <button class="btn-buy" data-link="https://exemplo.com/comprar/combo-4">Comprar Agora</button>
-                </div>
-                <div class="combo-card featured">
-                    <div class="combo-img">
-                        <img src="images/completo.png" alt="Pacote Completo">
-                    </div>
-                    <h3>PACOTE COMPLETO</h3>
-                    <p>Todos os 9 instrumentos em um único pacote</p>
-                    <button class="btn-buy" data-link="https://exemplo.com/comprar/completo">Comprar Agora</button>
-                </div>
-            </div>
+<!-- Seção Combos -->
+<section class="combos">
+  <div class="container">
+    <h2>Combos Especiais</h2>
+    <div class="combos-grid">
+      <div class="combo-card">
+        <div class="combo-img">
+          <img src="images/combo 4.png" alt="Combo 4 Instrumentos">
         </div>
-    </section>
+        <h3>Combo 4 Instrumentos</h3>
+        <p>Flauta, Sax Alto, Trompete e Violino</p>
+
+        <!-- VALOR ADICIONADO -->
+        <p class="preco">
+          <span class="antigo">R$99,90</span>
+          <span class="atual">R$69,90</span>
+        </p>
+
+        <button class="btn-buy" data-link="https://exemplo.com/comprar/combo-4">Comprar Agora</button>
+      </div>
+      <div class="combo-card featured">
+        <div class="combo-img">
+          <img src="images/completo.png" alt="Pacote Completo">
+        </div>
+        <h3>PACOTE COMPLETO</h3>
+        <p>Todos os 9 instrumentos em um único pacote</p>
+
+        <!-- VALOR ADICIONADO -->
+        <p class="preco">
+          <span class="antigo">R$298,90</span>
+          <span class="atual">R$109,90</span>
+        </p>
+
+        <button class="btn-buy" data-link="https://exemplo.com/comprar/completo">Comprar Agora</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* ======= ESTILO DOS PREÇOS ======= */
+    .preco {
+      margin: 10px 0 15px;
+    }
+
+    .preco .antigo {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.9rem;
+      margin-right: 6px;
+    }
+
+    .preco .atual {
+      color: #22c55e;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  </style>
+</section>
+
 
  <!-- SEÇÃO FAQ -->
 <section class="faq">
