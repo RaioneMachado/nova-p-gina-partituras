@@ -1031,6 +1031,199 @@ document.addEventListener('DOMContentLoaded', () => {
   </script>
 </section>
 
+<!-- 🎁 SEÇÃO - O QUE VOCÊ VAI RECEBER -->
+<section class="receive-sec">
+  <!-- Efeitos de luz em azul ao fundo -->
+  <div class="light-effect light-1"></div>
+  <div class="light-effect light-2"></div>
+  <div class="light-effect light-3"></div>
+  
+  <div class="container">
+    <h2>🎁 O Que Você Vai Receber</h2>
+    <div class="receive-box">
+      <ul>
+        <li>✅ +30 Partituras Profissionais dos Louvores Mais Tocadas</li>
+        <li>✅ Partituras Bônus Exclusivas</li>
+        <li>✅ Playbacks de todas as músicas</li>
+        <li>✅ Acesso Imediato Após a Confirmação do Pagamento</li>
+        <li>✅ Arquivos em PDF — Veja no Celular, Tablet ou Computador</li>
+        <li>✅ Acesso Vitalício para Baixar Quando Quiser</li>
+        <li>✅ Suporte e Atualizações Grátis</li>
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    /* ============================
+       SEÇÃO - O QUE VOCÊ VAI RECEBER
+    ============================ */
+    .receive-sec {
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+      padding: 70px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .receive-sec h2 {
+      color: #4aa8ff;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(74, 168, 255, 0.5);
+      position: relative;
+      display: inline-block;
+    }
+
+    .receive-sec h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #4aa8ff, transparent);
+    }
+
+    .receive-box {
+      background: rgba(30, 41, 59, 0.85);
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 15px;
+      padding: 35px 30px;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
+      position: relative;
+      border: 1px solid rgba(74, 168, 255, 0.2);
+      backdrop-filter: blur(5px);
+    }
+
+    .receive-box::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #4aa8ff, #0f172a, #4aa8ff);
+      border-radius: 17px;
+      z-index: -1;
+      opacity: 0.2;
+    }
+
+    .receive-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      line-height: 1.8;
+    }
+
+    .receive-box li {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 35px;
+      transition: all 0.3s ease;
+    }
+
+    .receive-box li:hover {
+      color: #ffffff;
+      transform: translateX(5px);
+    }
+
+    .receive-box li::before {
+      content: "🎵";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #4aa8ff;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .receive-box li:hover::before {
+      transform: scale(1.2);
+      text-shadow: 0 0 8px rgba(74, 168, 255, 0.8);
+    }
+
+    /* Efeitos de luz em azul */
+    .light-effect {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(74, 168, 255, 0.4) 0%, rgba(74, 168, 255, 0) 70%);
+      filter: blur(20px);
+      z-index: 1;
+    }
+
+    .light-1 {
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      left: -100px;
+      animation: pulse 8s infinite alternate;
+    }
+
+    .light-2 {
+      width: 200px;
+      height: 200px;
+      bottom: -50px;
+      right: 10%;
+      animation: pulse 6s infinite alternate-reverse;
+    }
+
+    .light-3 {
+      width: 150px;
+      height: 150px;
+      top: 30%;
+      right: -50px;
+      animation: pulse 10s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.4;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 0.4;
+        transform: scale(1);
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .receive-sec h2 {
+        font-size: 1.7rem;
+      }
+      
+      .receive-box {
+        padding: 25px 20px;
+      }
+      
+      .receive-box li {
+        font-size: 0.95rem;
+        padding-left: 30px;
+      }
+      
+      .light-1, .light-2, .light-3 {
+        display: none; /* Esconder efeitos em mobile para melhor performance */
+      }
+    }
+  </style>
+</section>
+
+
     
 <!-- Seção Combos -->
 <section class="combos">
