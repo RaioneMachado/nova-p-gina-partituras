@@ -630,6 +630,341 @@ btnPrev.addEventListener("click", () => {
 });
 </script>
 
+<!-- 💬 SEÇÃO DE DEPOIMENTOS (VERSÃO CORRIGIDA E ROBUSTA) -->
+<section class="testimonials-section" id="testimonials">
+  <div class="testimonials-container">
+    <h2>Mais de <span>1.279</span> músicos satisfeitos 🎵</h2>
+    <p class="subtitle">Veja o que quem já adquiriu está dizendo</p>
+
+    <div class="testimonials-carousel">
+      <button id="prevTestimonial" class="testimonial-btn prev" aria-label="Anterior">❮</button>
+
+      <div class="testimonials-track" id="testimonialTrack">
+        <div class="testimonial-card">
+          <p class="testimonial-text">“As partituras são lindas e super bem organizadas. Tocamos na igreja e todos amaram!”</p>
+          <h4>— Ana Paula, Pianista</h4>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">“Material excelente, completo e fácil de seguir. Superou minhas expectativas!”</p>
+          <h4>— Carlos Mendes, Saxofonista</h4>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">“Já comprei vários materiais online, mas esse é o melhor! Qualidade impecável.”</p>
+          <h4>— Fernanda Oliveira, Violinista</h4>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">“Recomendo muito! Ideal para quem toca nos cultos e quer evoluir no instrumento.”</p>
+          <h4>— João Ribeiro, Trompetista</h4>
+        </div>
+      </div>
+
+      <button id="nextTestimonial" class="testimonial-btn next" aria-label="Próximo">❯</button>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ====== SEÇÃO DEPOIMENTOS ====== */
+.testimonials-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(74, 144, 226, 0.4), transparent);
+  filter: blur(80px);
+  z-index: 1;
+}
+
+.testimonials-section h2 {
+  font-size: 2.3rem;
+  color: #4a90e2;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(74, 144, 226, 0.4);
+}
+
+.testimonials-section h2 span {
+  color: #10b981;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+}
+
+/* ====== CARROSSEL ====== */
+.testimonials-carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 0 40px;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+}
+
+.testimonials-track::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-card {
+  flex: 0 0 320px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px 25px;
+  border-radius: 20px;
+  scroll-snap-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  transition: all 0.35s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+  background: rgba(74, 144, 226, 0.12);
+  border-color: #4a90e2;
+  box-shadow: 0 0 25px rgba(74, 144, 226, 0.25);
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 20px;
+}
+
+.testimonial-card h4 {
+  color: #10b981;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ====== BOTÕES ====== */
+.testimonial-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(74, 144, 226, 0.9);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+}
+
+.testimonial-btn:hover {
+  background: #4a90e2;
+  box-shadow: 0 0 25px rgba(74, 144, 226, 0.7);
+}
+
+.testimonial-btn.prev { left: 10px; }
+.testimonial-btn.next { right: 10px; }
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 60px 10px;
+  }
+
+  .testimonial-card {
+    flex: 0 0 85%;
+  }
+
+  .testimonial-btn {
+    bottom: 20px;
+    top: auto;
+    transform: none;
+    font-size: 1.6rem;
+  }
+
+  .testimonial-btn.prev { left: 25%; }
+  .testimonial-btn.next { right: 25%; }
+}
+</style>
+
+<script>
+/* ====== JS ROBUSTO DO CARROSSEL DE DEPOIMENTOS ====== */
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('testimonialTrack');
+  const prevBtn = document.getElementById('prevTestimonial');
+  const nextBtn = document.getElementById('nextTestimonial');
+
+  if (!track) return; // evita erro se o bloco não existir
+
+  const cardsSelector = '.testimonial-card';
+  let cards = Array.from(track.querySelectorAll(cardsSelector));
+  if (cards.length === 0) return;
+
+  // recalcula largura e gap dinamicamente
+  function getCardMetrics() {
+    const style = getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 25; // fallback
+    const cardW = cards[0].getBoundingClientRect().width;
+    return { cardW, gap };
+  }
+
+  // centraliza o card pelo índice
+  function scrollToIndex(index, behavior = 'smooth') {
+    cards = Array.from(track.querySelectorAll(cardsSelector)); // refresh
+    const { cardW, gap } = getCardMetrics();
+    // calcular posição do centro do card em relação ao container
+    const card = cards[index];
+    if (!card) return;
+    const target = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+    track.scrollTo({ left: Math.round(target), behavior });
+  }
+
+  // mantém índice dentro do range
+  let currentIndex = 0;
+  function clampIndex(i) {
+    return Math.max(0, Math.min(i, cards.length - 1));
+  }
+
+  // next / prev seguros
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentIndex = clampIndex(currentIndex + 1);
+      scrollToIndex(currentIndex);
+      restartAutoScroll();
+    });
+  }
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentIndex = clampIndex(currentIndex - 1);
+      scrollToIndex(currentIndex);
+      restartAutoScroll();
+    });
+  }
+
+  // detecta scroll manual e atualiza índice (debounced)
+  let scrollTimer = null;
+  track.addEventListener('scroll', () => {
+    if (scrollTimer) clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      // encontra card mais próximo do centro
+      const center = track.scrollLeft + track.clientWidth / 2;
+      let best = 0, bestDiff = Infinity;
+      cards.forEach((c, i) => {
+        const cCenter = c.offsetLeft + c.clientWidth / 2;
+        const diff = Math.abs(center - cCenter);
+        if (diff < bestDiff) { bestDiff = diff; best = i; }
+      });
+      currentIndex = best;
+    }, 120);
+  });
+
+  // touch/pointer pausa auto-scroll e re-ajusta no end
+  let isPointerDown = false;
+  let startX = 0;
+  track.addEventListener('pointerdown', (e) => {
+    isPointerDown = true;
+    startX = e.clientX;
+    stopAutoScroll();
+    track.style.scrollBehavior = 'auto';
+    track.setPointerCapture && track.setPointerCapture(e.pointerId);
+  });
+  track.addEventListener('pointermove', (e) => {
+    if (!isPointerDown) return;
+    // permitir arrastar naturalmente (browser já lida com isso)
+  });
+  track.addEventListener('pointerup', (e) => {
+    if (!isPointerDown) return;
+    isPointerDown = false;
+    track.style.scrollBehavior = 'smooth';
+    // snap para o mais próximo
+    const center = track.scrollLeft + track.clientWidth / 2;
+    let best = 0, bestDiff = Infinity;
+    cards.forEach((c, i) => {
+      const cCenter = c.offsetLeft + c.clientWidth / 2;
+      const diff = Math.abs(center - cCenter);
+      if (diff < bestDiff) { bestDiff = diff; best = i; }
+    });
+    currentIndex = best;
+    scrollToIndex(currentIndex);
+    restartAutoScroll();
+  });
+
+  // fallback para touch events (alguns navegadores)
+  track.addEventListener('touchstart', () => { stopAutoScroll(); });
+  track.addEventListener('touchend', () => {
+    // snap to nearest after short delay
+    setTimeout(() => {
+      const center = track.scrollLeft + track.clientWidth / 2;
+      let best = 0, bestDiff = Infinity;
+      cards.forEach((c, i) => {
+        const cCenter = c.offsetLeft + c.clientWidth / 2;
+        const diff = Math.abs(center - cCenter);
+        if (diff < bestDiff) { bestDiff = diff; best = i; }
+      });
+      currentIndex = best;
+      scrollToIndex(currentIndex);
+      restartAutoScroll();
+    }, 120);
+  });
+
+  // AUTO-SCROLL (suave, sem pular)
+  let autoTimer = null;
+  function startAutoScroll() {
+    stopAutoScroll();
+    autoTimer = setInterval(() => {
+      currentIndex = (currentIndex + 1) % cards.length;
+      scrollToIndex(currentIndex);
+    }, 4500);
+  }
+  function stopAutoScroll() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+  function restartAutoScroll() {
+    stopAutoScroll();
+    // espera um pouco antes de reiniciar para não competir com o usuário
+    setTimeout(startAutoScroll, 1500);
+  }
+
+  // inicia centralizando o primeiro card e auto-scroll
+  scrollToIndex(currentIndex, 'auto');
+  startAutoScroll();
+
+  // recalcula quando a janela muda tamanho
+  window.addEventListener('resize', () => {
+    // refresh cards list and re-center current
+    cards = Array.from(track.querySelectorAll(cardsSelector));
+    scrollToIndex(currentIndex, 'auto');
+  });
+});
+</script>
 
 
     <!-- Seção Garantia -->
