@@ -78,22 +78,305 @@
   const timerInterval = setInterval(updateTimer, 1000);
 </script>
 
-    <!-- Seção Violão em Destaque -->
-    <section class="featured-violao">
-        <div class="container">
-            <div class="violao-content">
-                <div class="violao-image">
-                    <img src="" alt="Violão em Destaque">
-                </div>
-                <div class="violao-text">
-                    <h2>+30 partituras + playbacks dos louvores mais tocados</h2>
-                    <p>As melhores partituras em um só lugar, PROMOÇÃO DE BLACK FRIDAY</p>
-                  
+<!-- Seção Violão em Destaque -->
+<section class="featured-violao">
+    <div class="container">
+        <div class="violao-content">
+            <div class="violao-image">
+                <img src="images/imagem vioão 2.jpg" alt="Violão em Destaque">
+                <!-- Overlay gradiente de cima para baixo -->
+                <div class="image-overlay"></div>
+                <!-- Texto posicionado sobre a imagem -->
+                <div class="violao-text-overlay">
+                    <h2><span class="text-gradient">+30 partituras dos louvores mais tocados + playbacks</span><br>
+                    <p class="highlight-text">🎵 <strong>Coleção Completa</strong> dos louvores mais tocados + <strong>Bônus Especiais</strong> 🎵</p>
+
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <style>
+        /* ============================
+           SEÇÃO VIOLÃO EM DESTAQUE
+        ============================ */
+        .featured-violao {
+            padding: 80px 20px 120px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: visible;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .violao-content {
+            position: relative;
+        }
+
+        .violao-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: visible;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            height: 600px;
+            margin-bottom: 60px;
+        }
+
+        .violao-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            border-radius: 20px;
+        }
+
+        .violao-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Overlay gradiente de cima para baixo */
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(15, 23, 42, 0.4) 0%,
+                rgba(15, 23, 42, 0.2) 30%,
+                rgba(15, 23, 42, 0.8) 70%,
+                rgba(15, 23, 42, 0.95) 100%
+            );
+            z-index: 1;
+            border-radius: 20px;
+        }
+
+        /* Texto posicionado para começar na metade e ultrapassar para baixo */
+        .violao-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            padding: 60px 40px 40px;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .violao-text-overlay h2 {
+            color: #ffffff;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #4aa8ff 0%, #60a5fa 50%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight-text {
+            color: #fbbf24;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            background: rgba(251, 191, 36, 0.1);
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 2px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .subtitle {
+            color: #f87171;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 35px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            background: rgba(248, 113, 113, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* Botão de call-to-action melhorado */
+        .cta-button {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #4aa8ff 0%, #2563eb 100%);
+            color: white;
+            padding: 20px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(74, 168, 255, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(74, 168, 255, 0.6);
+            background: linear-gradient(135deg, #2563eb 0%, #4aa8ff 100%);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .btn-text {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .btn-subtext {
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* Efeitos de luz */
+        .light-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(74, 168, 255, 0.3) 0%, rgba(74, 168, 255, 0) 70%);
+            filter: blur(25px);
+            z-index: 1;
+        }
+
+        .light-1 {
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            right: -100px;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .light-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: -100px;
+            animation: float 6s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.05);
+                opacity: 0.6;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .featured-violao {
+                padding: 50px 15px 80px;
+            }
+
+            .violao-image {
+                height: 500px;
+                border-radius: 15px;
+                margin-bottom: 40px;
+            }
+
+            .violao-text-overlay {
+                padding: 40px 25px 30px;
+            }
+
+            .violao-text-overlay h2 {
+                font-size: 2.2rem;
+            }
+
+            .text-gradient {
+                font-size: 2.4rem;
+            }
+
+            .highlight-text {
+                font-size: 1.2rem;
+                padding: 10px 15px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+
+            .cta-button {
+                padding: 18px 35px;
+            }
+
+            .btn-text {
+                font-size: 1.1rem;
+            }
+
+            .light-1, .light-2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .featured-violao {
+                padding: 40px 15px 60px;
+            }
+
+            .violao-image {
+                height: 400px;
+                margin-bottom: 30px;
+            }
+
+            .violao-text-overlay h2 {
+                font-size: 1.8rem;
+            }
+
+            .text-gradient {
+                font-size: 2rem;
+            }
+
+            .highlight-text {
+                font-size: 1rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</section>
 
 
 
@@ -144,6 +427,345 @@
       <button id="nextMusic" class="music-btn next">❯</button>
     </div>
   </div>
+</section>
+
+<!-- SEÇÃO INSTRUMENTOS -->
+<section class="instrumentos-sec" id="instruments">
+  <h2>Instrumentos Individuais</h2>
+  <p class="hint">Arraste para o lado 👉</p>
+
+  <div class="instrumentos-wrapper">
+    <button class="seta prev">❮</button>
+
+    <div class="instrumentos-container" id="carousel">
+      <div class="instrumento-card">
+        <img src="images/flauta.png" alt="Flauta">
+        <h3>Flauta</h3>
+        <p>Partituras para flauta</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/teclado.png" alt="Teclado">
+        <h3>Teclado</h3>
+        <p>Partituras para teclado</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/piano.png" alt="Piano">
+        <h3>Piano</h3>
+        <p>Partituras para piano</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/trompete.png" alt="Trompete">
+        <h3>Trompete</h3>
+        <p>Partituras para trompete</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/trombone.png" alt="Trombone">
+        <h3>Trombone</h3>
+        <p>Partituras para trombone</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/clarinete.png" alt="Trombone">
+        <h3>Clarinete</h3>
+        <p>Partituras para Clarinete</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/sax tenor.png" alt="Sax Tenor">
+        <h3>Sax Tenor</h3>
+        <p>Partituras para sax tenor</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/sax tenor.png" alt="Sax Alto">
+        <h3>Sax Alto</h3>
+        <p>Partituras para sax alto</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/sax tenor.png" alt="Sax Soprano">
+        <h3>Sax Soprano</h3>
+        <p>Partituras para sax soprano</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/violino.png" alt="Violino">
+        <h3>Violino</h3>
+        <p>Partituras para violino</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/viola.png" alt="Viola">
+        <h3>Viola</h3>
+        <p>Partituras para viola</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/violoncelo.png" alt="Violoncelo">
+        <h3>Violoncelo</h3>
+        <p>Partituras para violoncelo</p>
+        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+    </div>
+
+    <button class="seta next">❯</button>
+  </div>
+
+  <style>
+    .instrumentos-sec {
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+      padding: 70px 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .instrumentos-sec h2 {
+      color: #4aa8ff;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .instrumentos-sec .hint {
+      color: #aaa;
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+    }
+
+    .instrumentos-wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .instrumentos-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 10px;
+    }
+
+    .instrumentos-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .instrumento-card {
+      flex: 0 0 260px;
+      background: #1e293b;
+      border-radius: 15px;
+      padding: 18px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      scroll-snap-align: center;
+      position: relative;
+    }
+
+    .instrumento-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .instrumento-card h3 {
+      color: #4aa8ff;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .instrumento-card p {
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .preco {
+      margin-bottom: 10px;
+    }
+
+    .preco .antigo {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.9rem;
+      margin-right: 6px;
+    }
+
+    .preco .atual {
+      color: #22c55e;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .btn-buy {
+      background: linear-gradient(90deg, #22c55e, #16a34a);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-buy:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #16a34a, #22c55e);
+    }
+
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(74, 168, 255, 0.9);
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      z-index: 5;
+    }
+
+    .seta:hover {
+      background: #4aa8ff;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .seta.prev {
+      left: -15px;
+    }
+
+    .seta.next {
+      right: -15px;
+    }
+
+    @media (max-width: 768px) {
+      .instrumento-card {
+        flex: 0 0 80%;
+      }
+
+      .seta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 38px;
+        height: 38px;
+        font-size: 1.5rem;
+        background: rgba(74, 168, 255, 0.8);
+      }
+
+      .seta.prev {
+        left: 10px;
+      }
+
+      .seta.next {
+        right: 10px;
+      }
+
+      .instrumentos-container {
+        gap: 15px;
+        padding: 10px 5px;
+      }
+    }
+  </style>
+
+  <script>
+    const carousel = document.getElementById("carousel");
+    const cards = document.querySelectorAll(".instrumento-card");
+    const prev = document.querySelector(".seta.prev");
+    const next = document.querySelector(".seta.next");
+
+    let currentIndex = 0;
+
+    function scrollToCard(index) {
+      const card = cards[index];
+      card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }
+
+    next.addEventListener("click", () => {
+      currentIndex = Math.min(currentIndex + 1, cards.length - 1);
+      scrollToCard(currentIndex);
+    });
+
+    prev.addEventListener("click", () => {
+      currentIndex = Math.max(currentIndex - 1, 0);
+      scrollToCard(currentIndex);
+    });
+
+    carousel.addEventListener("scroll", () => {
+      const scrollCenter = carousel.scrollLeft + carousel.offsetWidth / 2;
+      let closestIndex = 0;
+      let minDiff = Infinity;
+
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const diff = Math.abs(scrollCenter - cardCenter);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIndex = i;
+        }
+      });
+
+      currentIndex = closestIndex;
+    });
+
+    let startX;
+    carousel.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0 && currentIndex < cards.length - 1) {
+          currentIndex++;
+        } else if (diff < 0 && currentIndex > 0) {
+          currentIndex--;
+        }
+        scrollToCard(currentIndex);
+      }
+    });
+  </script>
 </section>
 
 <style>
@@ -328,20 +950,308 @@ btnPrev.addEventListener("click", () => {
 </script>
 
     <!-- Seção Violão em Destaque -->
-    <section class="featured-violao">
-        <div class="container">
-            <div class="violao-content">
-                <div class="violao-image">
-                    <img src="images/violao-destaque.jpg" alt="Violão em Destaque">
-                </div>
-                <div class="violao-text">
-                    <h2>Partituras para Violão</h2>
-                    <p>30 partituras dos louvores mais tocadas + 3 de brinde, especialmente arranjadas para violão!</p>
-                    <button class="btn-buy" data-link="https://exemplo.com/comprar/violao">Comprar Agora</button>
+<section class="featured-violao">
+    <div class="container">
+        <div class="violao-content">
+            <div class="violao-image">
+                <img src="images/imagem violão 1.jpg" alt="Violão em Destaque">
+                <!-- Overlay gradiente de cima para baixo -->
+                <div class="image-overlay"></div>
+                <!-- Texto posicionado sobre a imagem -->
+                <div class="violao-text-overlay">
+                    <h2><span class="text-gradient">Combo de partituras para violão</span><br>
+                    <!-- Botão de call-to-action -->
+                    <a href="#" class="cta-button">
+                        <span class="btn-text"> Garantir o combo agora</span>
+                    </a>
+
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <style>
+        /* ============================
+           SEÇÃO VIOLÃO EM DESTAQUE
+        ============================ */
+        .featured-violao {
+            padding: 80px 20px 120px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: visible;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .violao-content {
+            position: relative;
+        }
+
+        .violao-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: visible;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            height: 600px;
+            margin-bottom: 60px;
+        }
+
+        .violao-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            border-radius: 20px;
+        }
+
+        .violao-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Overlay gradiente de cima para baixo */
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(15, 23, 42, 0.4) 0%,
+                rgba(15, 23, 42, 0.2) 30%,
+                rgba(15, 23, 42, 0.8) 70%,
+                rgba(15, 23, 42, 0.95) 100%
+            );
+            z-index: 1;
+            border-radius: 20px;
+        }
+
+        /* Texto posicionado para começar na metade e ultrapassar para baixo */
+        .violao-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            padding: 60px 40px 40px;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .violao-text-overlay h2 {
+            color: #ffffff;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #4aa8ff 0%, #60a5fa 50%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight-text {
+            color: #fbbf24;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            background: rgba(251, 191, 36, 0.1);
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 2px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .subtitle {
+            color: #f87171;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 35px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            background: rgba(248, 113, 113, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* Botão de call-to-action melhorado */
+        .cta-button {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #4aa8ff 0%, #2563eb 100%);
+            color: white;
+            padding: 20px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(74, 168, 255, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(74, 168, 255, 0.6);
+            background: linear-gradient(135deg, #2563eb 0%, #4aa8ff 100%);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .btn-text {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .btn-subtext {
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* Efeitos de luz */
+        .light-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(74, 168, 255, 0.3) 0%, rgba(74, 168, 255, 0) 70%);
+            filter: blur(25px);
+            z-index: 1;
+        }
+
+        .light-1 {
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            right: -100px;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .light-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: -100px;
+            animation: float 6s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.05);
+                opacity: 0.6;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .featured-violao {
+                padding: 50px 15px 80px;
+            }
+
+            .violao-image {
+                height: 500px;
+                border-radius: 15px;
+                margin-bottom: 40px;
+            }
+
+            .violao-text-overlay {
+                padding: 40px 25px 30px;
+            }
+
+            .violao-text-overlay h2 {
+                font-size: 2.2rem;
+            }
+
+            .text-gradient {
+                font-size: 2.4rem;
+            }
+
+            .highlight-text {
+                font-size: 1.2rem;
+                padding: 10px 15px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+
+            .cta-button {
+                padding: 18px 35px;
+            }
+
+            .btn-text {
+                font-size: 1.1rem;
+            }
+
+            .light-1, .light-2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .featured-violao {
+                padding: 40px 15px 60px;
+            }
+
+            .violao-image {
+                height: 400px;
+                margin-bottom: 30px;
+            }
+
+            .violao-text-overlay h2 {
+                font-size: 1.8rem;
+            }
+
+            .text-gradient {
+                font-size: 2rem;
+            }
+
+            .highlight-text {
+                font-size: 1rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</section>
+
 
 
 <!-- 💬 SEÇÃO DE DEPOIMENTOS (VERSÃO CORRIGIDA E ROBUSTA) -->
@@ -700,344 +1610,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </section>
 
-<!-- SEÇÃO INSTRUMENTOS -->
-<section class="instrumentos-sec" id="instruments">
-  <h2>Instrumentos Individuais</h2>
-  <p class="hint">Arraste para o lado 👉</p>
 
-  <div class="instrumentos-wrapper">
-    <button class="seta prev">❮</button>
-
-    <div class="instrumentos-container" id="carousel">
-      <div class="instrumento-card">
-        <img src="images/flauta.png" alt="Flauta">
-        <h3>Flauta</h3>
-        <p>Partituras para flauta</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/teclado.png" alt="Teclado">
-        <h3>Teclado</h3>
-        <p>Partituras para teclado</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/piano.png" alt="Piano">
-        <h3>Piano</h3>
-        <p>Partituras para piano</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/trompete.png" alt="Trompete">
-        <h3>Trompete</h3>
-        <p>Partituras para trompete</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/trombone.png" alt="Trombone">
-        <h3>Trombone</h3>
-        <p>Partituras para trombone</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/clarinete.png" alt="Trombone">
-        <h3>Clarinete</h3>
-        <p>Partituras para Clarinete</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/sax tenor.png" alt="Sax Tenor">
-        <h3>Sax Tenor</h3>
-        <p>Partituras para sax tenor</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/sax tenor.png" alt="Sax Alto">
-        <h3>Sax Alto</h3>
-        <p>Partituras para sax alto</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/sax tenor.png" alt="Sax Soprano">
-        <h3>Sax Soprano</h3>
-        <p>Partituras para sax soprano</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/violino.png" alt="Violino">
-        <h3>Violino</h3>
-        <p>Partituras para violino</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/viola.png" alt="Viola">
-        <h3>Viola</h3>
-        <p>Partituras para viola</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/violoncelo.png" alt="Violoncelo">
-        <h3>Violoncelo</h3>
-        <p>Partituras para violoncelo</p>
-        <p class="preco"><span class="antigo">R$49,90</span> <span class="atual">R$24,90</span></p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-    </div>
-
-    <button class="seta next">❯</button>
-  </div>
-
-  <style>
-    .instrumentos-sec {
-      background: #0f172a;
-      color: #fff;
-      text-align: center;
-      padding: 70px 15px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .instrumentos-sec h2 {
-      color: #4aa8ff;
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .instrumentos-sec .hint {
-      color: #aaa;
-      margin-bottom: 25px;
-      font-size: 0.9rem;
-    }
-
-    .instrumentos-wrapper {
-      position: relative;
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .instrumentos-container {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-      padding: 10px;
-    }
-
-    .instrumentos-container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .instrumento-card {
-      flex: 0 0 260px;
-      background: #1e293b;
-      border-radius: 15px;
-      padding: 18px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      scroll-snap-align: center;
-      position: relative;
-    }
-
-    .instrumento-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 12px;
-    }
-
-    .instrumento-card h3 {
-      color: #4aa8ff;
-      font-size: 1.2rem;
-      margin-bottom: 6px;
-    }
-
-    .instrumento-card p {
-      color: #ccc;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    .preco {
-      margin-bottom: 10px;
-    }
-
-    .preco .antigo {
-      text-decoration: line-through;
-      color: #999;
-      font-size: 0.9rem;
-      margin-right: 6px;
-    }
-
-    .preco .atual {
-      color: #22c55e;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    .btn-buy {
-      background: linear-gradient(90deg, #22c55e, #16a34a);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 8px 15px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn-buy:hover {
-      transform: scale(1.05);
-      background: linear-gradient(90deg, #16a34a, #22c55e);
-    }
-
-    .seta {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(74, 168, 255, 0.9);
-      border: none;
-      color: #fff;
-      font-size: 1.8rem;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-      z-index: 5;
-    }
-
-    .seta:hover {
-      background: #4aa8ff;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .seta.prev {
-      left: -15px;
-    }
-
-    .seta.next {
-      right: -15px;
-    }
-
-    @media (max-width: 768px) {
-      .instrumento-card {
-        flex: 0 0 80%;
-      }
-
-      .seta {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 38px;
-        height: 38px;
-        font-size: 1.5rem;
-        background: rgba(74, 168, 255, 0.8);
-      }
-
-      .seta.prev {
-        left: 10px;
-      }
-
-      .seta.next {
-        right: 10px;
-      }
-
-      .instrumentos-container {
-        gap: 15px;
-        padding: 10px 5px;
-      }
-    }
-  </style>
-
-  <script>
-    const carousel = document.getElementById("carousel");
-    const cards = document.querySelectorAll(".instrumento-card");
-    const prev = document.querySelector(".seta.prev");
-    const next = document.querySelector(".seta.next");
-
-    let currentIndex = 0;
-
-    function scrollToCard(index) {
-      const card = cards[index];
-      card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-    }
-
-    next.addEventListener("click", () => {
-      currentIndex = Math.min(currentIndex + 1, cards.length - 1);
-      scrollToCard(currentIndex);
-    });
-
-    prev.addEventListener("click", () => {
-      currentIndex = Math.max(currentIndex - 1, 0);
-      scrollToCard(currentIndex);
-    });
-
-    carousel.addEventListener("scroll", () => {
-      const scrollCenter = carousel.scrollLeft + carousel.offsetWidth / 2;
-      let closestIndex = 0;
-      let minDiff = Infinity;
-
-      cards.forEach((card, i) => {
-        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-        const diff = Math.abs(scrollCenter - cardCenter);
-        if (diff < minDiff) {
-          minDiff = diff;
-          closestIndex = i;
-        }
-      });
-
-      currentIndex = closestIndex;
-    });
-
-    let startX;
-    carousel.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    });
-
-    carousel.addEventListener("touchend", (e) => {
-      const endX = e.changedTouches[0].clientX;
-      const diff = startX - endX;
-
-      if (Math.abs(diff) > 50) {
-        if (diff > 0 && currentIndex < cards.length - 1) {
-          currentIndex++;
-        } else if (diff < 0 && currentIndex > 0) {
-          currentIndex--;
-        }
-        scrollToCard(currentIndex);
-      }
-    });
-  </script>
-</section>
 
 <!-- 🎁 SEÇÃO - O QUE VOCÊ VAI RECEBER -->
 <section class="receive-sec">
