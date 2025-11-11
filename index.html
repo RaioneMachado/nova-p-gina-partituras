@@ -11,7 +11,7 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <h1>Partituras Gospel</h1>
+            <h1>+30 partituras + playbacks dos louvores mais tocados</h1>
             <div class="promo-banner">
                 <p>PROMOÇÃO DE BLACK FRIDAY - Última chance de comprar na promoção</p>
             </div>
@@ -25,387 +25,20 @@
                 <div class="hero-image">
                     <img src="images/partitura-hero.jpg" alt="Partituras Gospel">
                 </div>
-                <div class="hero-text">
-                    <h2>30 Partituras dos Louvores Mais Tocados + 3 de Brinde</h2>
-                    <p>Material completo para músicos cristãos</p>
-                    <button class="btn-primary" id="viewSongsBtn">Ver Músicas</button>
-                </div>
+          
             </div>
         </div>
     </section>
 
-<!-- SEÇÃO INSTRUMENTOS -->
-<section class="instrumentos-sec" id="instruments">
-  <h2>Instrumentos Individuais</h2>
-  <p class="hint">Arraste para o lado 👉</p>
 
-  <div class="instrumentos-wrapper">
-    <button class="seta prev">❮</button>
 
-    <div class="instrumentos-container" id="carousel">
-      <div class="instrumento-card">
-        <img src="images/flauta.png" alt="Flauta">
-        <h3>Flauta</h3>
-        <p>Partituras para flauta</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
 
-      <div class="instrumento-card">
-        <img src="images/teclado.png" alt="Flauta">
-        <h3>Teclado</h3>
-        <p>Partituras para teclado</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/piano.png" alt="Flauta">
-        <h3>Piano</h3>
-        <p>Partituras para Piano</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/trompete.png" alt="Trompete">
-        <h3>Trompete</h3>
-        <p>Partituras para trompete</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/trombone.png" alt="Trombone">
-        <h3>Trombone</h3>
-        <p>Partituras para trombone</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/sax tenor.png" alt="Sax Tenor">
-        <h3>Sax Tenor</h3>
-        <p>Partituras para sax tenor</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/sax tenor.png" alt="Sax Alto">
-        <h3>Sax Alto</h3>
-        <p>Partituras para sax alto</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/sax tenor.png" alt="Sax Alto">
-        <h3>Sax Soprano</h3>
-        <p>Partituras para sax soprano</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/violino.png" alt="Violino">
-        <h3>Violino</h3>
-        <p>Partituras para violino</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/viola.png" alt="Violino">
-        <h3>Viola</h3>
-        <p>Partituras para Viola</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-
-      <div class="instrumento-card">
-        <img src="images/violoncelo.png" alt="Violino">
-        <h3>Violoncelo</h3>
-        <p>Partituras para Violoncelo</p>
-        <button class="btn-buy">Comprar Agora</button>
-      </div>
-    </div>
-
-    <button class="seta next">❯</button>
-  </div>
-
-  <style>
-    /* ===========================
-       SEÇÃO DE INSTRUMENTOS
-    ============================ */
-    .instrumentos-sec {
-      background: #0f172a;
-      color: #fff;
-      text-align: center;
-      padding: 70px 15px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .instrumentos-sec h2 {
-      color: #4aa8ff;
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .instrumentos-sec .hint {
-      color: #aaa;
-      margin-bottom: 25px;
-      font-size: 0.9rem;
-    }
-
-    /* ===========================
-       CONTAINER DO CARROSSEL
-    ============================ */
-    .instrumentos-wrapper {
-      position: relative;
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .instrumentos-container {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-      padding: 10px;
-    }
-
-    .instrumentos-container::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* ===========================
-       CARDS
-    ============================ */
-    .instrumento-card {
-      flex: 0 0 260px;
-      background: #1e293b;
-      border-radius: 15px;
-      padding: 18px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      scroll-snap-align: center;
-      position: relative;
-    }
-
-    .instrumento-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 12px;
-    }
-
-    .instrumento-card h3 {
-      color: #4aa8ff;
-      font-size: 1.2rem;
-      margin-bottom: 6px;
-    }
-
-    .instrumento-card p {
-      color: #ccc;
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-    }
-
-    .instrumento-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(74, 168, 255, 0.6);
-      z-index: 10;
-    }
-
-    .btn-buy {
-      background: linear-gradient(90deg, #4aa8ff, #007bff);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 8px 15px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn-buy:hover {
-      transform: scale(1.05);
-      background: linear-gradient(90deg, #007bff, #4aa8ff);
-    }
-
-    /* ===========================
-       SETAS DE NAVEGAÇÃO
-    ============================ */
-    .seta {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(74, 168, 255, 0.9);
-      border: none;
-      color: #fff;
-      font-size: 1.8rem;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-      z-index: 5;
-    }
-
-    .seta:hover {
-      background: #4aa8ff;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .seta.prev {
-      left: -15px;
-    }
-
-    .seta.next {
-      right: -15px;
-    }
-
-    /* ===========================
-       MOBILE RESPONSIVO
-    ============================ */
-    @media (max-width: 768px) {
-      .instrumento-card {
-        flex: 0 0 80%;
-      }
-
-      .seta {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 38px;
-        height: 38px;
-        font-size: 1.5rem;
-        background: rgba(74, 168, 255, 0.8);
-      }
-
-      .seta.prev {
-        left: 10px;
-      }
-
-      .seta.next {
-        right: 10px;
-      }
-
-      .instrumentos-container {
-        gap: 15px;
-        padding: 10px 5px;
-      }
-    }
-  </style>
-
-  <script>
-    const carousel = document.getElementById("carousel");
-    const cards = document.querySelectorAll(".instrumento-card");
-    const prev = document.querySelector(".seta.prev");
-    const next = document.querySelector(".seta.next");
-
-    let currentIndex = 0;
-
-    function scrollToCard(index) {
-      const card = cards[index];
-      card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-    }
-
-    next.addEventListener("click", () => {
-      currentIndex = Math.min(currentIndex + 1, cards.length - 1);
-      scrollToCard(currentIndex);
-    });
-
-    prev.addEventListener("click", () => {
-      currentIndex = Math.max(currentIndex - 1, 0);
-      scrollToCard(currentIndex);
-    });
-
-    // Ajuste suave ao rolar manualmente
-    carousel.addEventListener("scroll", () => {
-      const scrollCenter = carousel.scrollLeft + carousel.offsetWidth / 2;
-      let closestIndex = 0;
-      let minDiff = Infinity;
-
-      cards.forEach((card, i) => {
-        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-        const diff = Math.abs(scrollCenter - cardCenter);
-        if (diff < minDiff) {
-          minDiff = diff;
-          closestIndex = i;
-        }
-      });
-
-      currentIndex = closestIndex;
-    });
-
-    // Suporte ao toque no mobile
-    let startX;
-    carousel.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    });
-
-    carousel.addEventListener("touchend", (e) => {
-      const endX = e.changedTouches[0].clientX;
-      const diff = startX - endX;
-
-      if (Math.abs(diff) > 50) {
-        if (diff > 0 && currentIndex < cards.length - 1) {
-          currentIndex++;
-        } else if (diff < 0 && currentIndex > 0) {
-          currentIndex--;
-        }
-        scrollToCard(currentIndex);
-      }
-    });
-  </script>
-</section>
-
-    <!-- Seção Violão em Destaque -->
-    <section class="featured-violao">
-        <div class="container">
-            <div class="violao-content">
-                <div class="violao-image">
-                    <img src="images/violao-destaque.jpg" alt="Violão em Destaque">
-                </div>
-                <div class="violao-text">
-                    <h2>Partituras para Violão</h2>
-                    <p>30 partituras dos louvores mais tocadas + 3 de brinde, especialmente arranjadas para violão. Aprenda a tocar seus louvores favoritos com facilidade!</p>
-                    <button class="btn-buy" data-link="https://exemplo.com/comprar/violao">Comprar Agora</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Combos -->
-    <section class="combos">
-        <div class="container">
-            <h2>Combos Especiais</h2>
-            <div class="combos-grid">
-                <div class="combo-card">
-                    <div class="combo-img">
-                        <img src="images/combo-4.jpg" alt="Combo 4 Instrumentos">
-                    </div>
-                    <h3>Combo 4 Instrumentos</h3>
-                    <p>Flauta, Sax Alto, Trompete e Violino</p>
-                    <button class="btn-buy" data-link="https://exemplo.com/comprar/combo-4">Comprar Agora</button>
-                </div>
-                <div class="combo-card featured">
-                    <div class="combo-img">
-                        <img src="images/completo.jpg" alt="Pacote Completo">
-                    </div>
-                    <h3>PACOTE COMPLETO</h3>
-                    <p>Todos os 9 instrumentos em um único pacote</p>
-                    <button class="btn-buy" data-link="https://exemplo.com/comprar/completo">Comprar Agora</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
 <!-- 🎵 SEÇÃO LISTA DE MÚSICAS -->
 <section class="musics-section" id="musics">
   <div class="musics-container">
-    <h2>🎶 30 Partituras + Bônus Exclusivos</h2>
-    <p class="subtitle">Lista das Músicas Incluídas — As mais tocadas!</p>
+    <h3>🎶 Lista das Músicas Incluídas — As mais tocadas!</h3>
+ 
     <p class="hint">Clique nas setas ou arraste para os lados👉</p>
 
     <div class="musics-carousel">
@@ -629,6 +262,23 @@ btnPrev.addEventListener("click", () => {
   track.scrollBy({ left: -300, behavior: "smooth" });
 });
 </script>
+
+    <!-- Seção Violão em Destaque -->
+    <section class="featured-violao">
+        <div class="container">
+            <div class="violao-content">
+                <div class="violao-image">
+                    <img src="images/violao-destaque.jpg" alt="Violão em Destaque">
+                </div>
+                <div class="violao-text">
+                    <h2>Partituras para Violão</h2>
+                    <p>30 partituras dos louvores mais tocadas + 3 de brinde, especialmente arranjadas para violão. Aprenda a tocar seus louvores favoritos com facilidade!</p>
+                    <button class="btn-buy" data-link="https://exemplo.com/comprar/violao">Comprar Agora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 <!-- 💬 SEÇÃO DE DEPOIMENTOS (VERSÃO CORRIGIDA E ROBUSTA) -->
 <section class="testimonials-section" id="testimonials">
@@ -981,6 +631,357 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>100%</span>
                         <span>Garantia</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- SEÇÃO INSTRUMENTOS -->
+<section class="instrumentos-sec" id="instruments">
+  <h2>Instrumentos Individuais</h2>
+  <p class="hint">Arraste para o lado 👉</p>
+
+  <div class="instrumentos-wrapper">
+    <button class="seta prev">❮</button>
+
+    <div class="instrumentos-container" id="carousel">
+      <div class="instrumento-card">
+        <img src="images/flauta.png" alt="Flauta">
+        <h3>Flauta</h3>
+        <p>Partituras para flauta</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/teclado.png" alt="Flauta">
+        <h3>Teclado</h3>
+        <p>Partituras para teclado</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/piano.png" alt="Flauta">
+        <h3>Piano</h3>
+        <p>Partituras para Piano</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/trompete.png" alt="Trompete">
+        <h3>Trompete</h3>
+        <p>Partituras para trompete</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/trombone.png" alt="Trombone">
+        <h3>Trombone</h3>
+        <p>Partituras para trombone</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/sax tenor.png" alt="Sax Tenor">
+        <h3>Sax Tenor</h3>
+        <p>Partituras para sax tenor</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/sax tenor.png" alt="Sax Alto">
+        <h3>Sax Alto</h3>
+        <p>Partituras para sax alto</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/sax tenor.png" alt="Sax Alto">
+        <h3>Sax Soprano</h3>
+        <p>Partituras para sax soprano</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/violino.png" alt="Violino">
+        <h3>Violino</h3>
+        <p>Partituras para violino</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/viola.png" alt="Violino">
+        <h3>Viola</h3>
+        <p>Partituras para Viola</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+
+      <div class="instrumento-card">
+        <img src="images/violoncelo.png" alt="Violino">
+        <h3>Violoncelo</h3>
+        <p>Partituras para Violoncelo</p>
+        <button class="btn-buy">Comprar Agora</button>
+      </div>
+    </div>
+
+    <button class="seta next">❯</button>
+  </div>
+
+  <style>
+    /* ===========================
+       SEÇÃO DE INSTRUMENTOS
+    ============================ */
+    .instrumentos-sec {
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+      padding: 70px 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .instrumentos-sec h2 {
+      color: #4aa8ff;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .instrumentos-sec .hint {
+      color: #aaa;
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+    }
+
+    /* ===========================
+       CONTAINER DO CARROSSEL
+    ============================ */
+    .instrumentos-wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .instrumentos-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 10px;
+    }
+
+    .instrumentos-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* ===========================
+       CARDS
+    ============================ */
+    .instrumento-card {
+      flex: 0 0 260px;
+      background: #1e293b;
+      border-radius: 15px;
+      padding: 18px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      scroll-snap-align: center;
+      position: relative;
+    }
+
+    .instrumento-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .instrumento-card h3 {
+      color: #4aa8ff;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .instrumento-card p {
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .instrumento-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(74, 168, 255, 0.6);
+      z-index: 10;
+    }
+
+    .btn-buy {
+      background: linear-gradient(90deg, #4aa8ff, #007bff);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-buy:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #007bff, #4aa8ff);
+    }
+
+    /* ===========================
+       SETAS DE NAVEGAÇÃO
+    ============================ */
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(74, 168, 255, 0.9);
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      z-index: 5;
+    }
+
+    .seta:hover {
+      background: #4aa8ff;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .seta.prev {
+      left: -15px;
+    }
+
+    .seta.next {
+      right: -15px;
+    }
+
+    /* ===========================
+       MOBILE RESPONSIVO
+    ============================ */
+    @media (max-width: 768px) {
+      .instrumento-card {
+        flex: 0 0 80%;
+      }
+
+      .seta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 38px;
+        height: 38px;
+        font-size: 1.5rem;
+        background: rgba(74, 168, 255, 0.8);
+      }
+
+      .seta.prev {
+        left: 10px;
+      }
+
+      .seta.next {
+        right: 10px;
+      }
+
+      .instrumentos-container {
+        gap: 15px;
+        padding: 10px 5px;
+      }
+    }
+  </style>
+
+  <script>
+    const carousel = document.getElementById("carousel");
+    const cards = document.querySelectorAll(".instrumento-card");
+    const prev = document.querySelector(".seta.prev");
+    const next = document.querySelector(".seta.next");
+
+    let currentIndex = 0;
+
+    function scrollToCard(index) {
+      const card = cards[index];
+      card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }
+
+    next.addEventListener("click", () => {
+      currentIndex = Math.min(currentIndex + 1, cards.length - 1);
+      scrollToCard(currentIndex);
+    });
+
+    prev.addEventListener("click", () => {
+      currentIndex = Math.max(currentIndex - 1, 0);
+      scrollToCard(currentIndex);
+    });
+
+    // Ajuste suave ao rolar manualmente
+    carousel.addEventListener("scroll", () => {
+      const scrollCenter = carousel.scrollLeft + carousel.offsetWidth / 2;
+      let closestIndex = 0;
+      let minDiff = Infinity;
+
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const diff = Math.abs(scrollCenter - cardCenter);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIndex = i;
+        }
+      });
+
+      currentIndex = closestIndex;
+    });
+
+    // Suporte ao toque no mobile
+    let startX;
+    carousel.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0 && currentIndex < cards.length - 1) {
+          currentIndex++;
+        } else if (diff < 0 && currentIndex > 0) {
+          currentIndex--;
+        }
+        scrollToCard(currentIndex);
+      }
+    });
+  </script>
+</section>
+    
+    <!-- Seção Combos -->
+    <section class="combos">
+        <div class="container">
+            <h2>Combos Especiais</h2>
+            <div class="combos-grid">
+                <div class="combo-card">
+                    <div class="combo-img">
+                        <img src="images/combo 4.png" alt="Combo 4 Instrumentos">
+                    </div>
+                    <h3>Combo 4 Instrumentos</h3>
+                    <p>Flauta, Sax Alto, Trompete e Violino</p>
+                    <button class="btn-buy" data-link="https://exemplo.com/comprar/combo-4">Comprar Agora</button>
+                </div>
+                <div class="combo-card featured">
+                    <div class="combo-img">
+                        <img src="images/completo.png" alt="Pacote Completo">
+                    </div>
+                    <h3>PACOTE COMPLETO</h3>
+                    <p>Todos os 9 instrumentos em um único pacote</p>
+                    <button class="btn-buy" data-link="https://exemplo.com/comprar/completo">Comprar Agora</button>
                 </div>
             </div>
         </div>
