@@ -1260,7 +1260,7 @@ btnPrev.addEventListener("click", () => {
 
 
 
-<!-- 💬 SEÇÃO DE DEPOIMENTOS (VERSÃO CORRIGIDA E ROBUSTA) -->
+<!-- 💬 SEÇÃO DE DEPOIMENTOS (VERSÃO OTIMIZADA) -->
 <section class="testimonials-section" id="testimonials">
   <div class="testimonials-container">
     <h2>Mais de <span>1.279</span> músicos satisfeitos 🎵</h2>
@@ -1299,31 +1299,18 @@ btnPrev.addEventListener("click", () => {
 <style>
 /* ====== SEÇÃO DEPOIMENTOS ====== */
 .testimonials-section {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   color: #fff;
   text-align: center;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .testimonials-container {
   max-width: 1100px;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
-}
-
-.testimonials-section::before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(74, 144, 226, 0.4), transparent);
-  filter: blur(80px);
-  z-index: 1;
 }
 
 .testimonials-section h2 {
@@ -1340,6 +1327,7 @@ btnPrev.addEventListener("click", () => {
 .subtitle {
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 40px;
+  font-size: 1.1rem;
 }
 
 /* ====== CARROSSEL ====== */
@@ -1365,13 +1353,13 @@ btnPrev.addEventListener("click", () => {
 }
 
 .testimonial-card {
-  flex: 0 0 320px;
+  flex: 0 0 340px;
   background: rgba(255, 255, 255, 0.08);
-  padding: 30px 25px;
+  padding: 35px 28px;
   border-radius: 20px;
   scroll-snap-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(6px);
   transition: all 0.35s ease;
 }
@@ -1380,13 +1368,15 @@ btnPrev.addEventListener("click", () => {
   transform: scale(1.03);
   background: rgba(74, 144, 226, 0.12);
   border-color: #4a90e2;
-  box-shadow: 0 0 25px rgba(74, 144, 226, 0.25);
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.25);
 }
 
 .testimonial-text {
   font-style: italic;
   color: rgba(255, 255, 255, 0.95);
   margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .testimonial-card h4 {
@@ -1400,21 +1390,21 @@ btnPrev.addEventListener("click", () => {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(74, 144, 226, 0.9);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 8px 13px;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.25s ease;
   z-index: 10;
-  box-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+  backdrop-filter: blur(8px);
 }
 
 .testimonial-btn:hover {
-  background: #4a90e2;
-  box-shadow: 0 0 25px rgba(74, 144, 226, 0.7);
+  background: rgba(74, 144, 226, 0.3);
+  border-color: #4a90e2;
 }
 
 .testimonial-btn.prev { left: 10px; }
@@ -1423,179 +1413,62 @@ btnPrev.addEventListener("click", () => {
 /* ====== RESPONSIVO ====== */
 @media (max-width: 768px) {
   .testimonials-section {
-    padding: 60px 10px;
+    padding: 70px 10px;
   }
 
   .testimonial-card {
-    flex: 0 0 85%;
+    flex: 0 0 95%;
+    margin: 0 auto;
   }
 
   .testimonial-btn {
-    bottom: 20px;
-    top: auto;
-    transform: none;
-    font-size: 1.6rem;
+    position: static;
+    display: inline-block;
+    margin: 25px 8px 0;
+    font-size: 1.5rem;
+    padding: 6px 11px;
+    background: rgba(255, 255, 255, 0.08);
   }
 
-  .testimonial-btn.prev { left: 25%; }
-  .testimonial-btn.next { right: 25%; }
+  .testimonials-carousel {
+    padding: 0;
+  }
 }
 </style>
 
 <script>
-/* ====== JS ROBUSTO DO CARROSSEL DE DEPOIMENTOS ====== */
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('testimonialTrack');
   const prevBtn = document.getElementById('prevTestimonial');
   const nextBtn = document.getElementById('nextTestimonial');
-
-  if (!track) return; // evita erro se o bloco não existir
-
-  const cardsSelector = '.testimonial-card';
-  let cards = Array.from(track.querySelectorAll(cardsSelector));
-  if (cards.length === 0) return;
-
-  // recalcula largura e gap dinamicamente
-  function getCardMetrics() {
-    const style = getComputedStyle(track);
-    const gap = parseFloat(style.gap) || 25; // fallback
-    const cardW = cards[0].getBoundingClientRect().width;
-    return { cardW, gap };
-  }
-
-  // centraliza o card pelo índice
-  function scrollToIndex(index, behavior = 'smooth') {
-    cards = Array.from(track.querySelectorAll(cardsSelector)); // refresh
-    const { cardW, gap } = getCardMetrics();
-    // calcular posição do centro do card em relação ao container
-    const card = cards[index];
-    if (!card) return;
-    const target = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
-    track.scrollTo({ left: Math.round(target), behavior });
-  }
-
-  // mantém índice dentro do range
   let currentIndex = 0;
-  function clampIndex(i) {
-    return Math.max(0, Math.min(i, cards.length - 1));
-  }
 
-  // next / prev seguros
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      currentIndex = clampIndex(currentIndex + 1);
-      scrollToIndex(currentIndex);
-      restartAutoScroll();
-    });
-  }
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      currentIndex = clampIndex(currentIndex - 1);
-      scrollToIndex(currentIndex);
-      restartAutoScroll();
-    });
-  }
-
-  // detecta scroll manual e atualiza índice (debounced)
-  let scrollTimer = null;
-  track.addEventListener('scroll', () => {
-    if (scrollTimer) clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(() => {
-      // encontra card mais próximo do centro
-      const center = track.scrollLeft + track.clientWidth / 2;
-      let best = 0, bestDiff = Infinity;
-      cards.forEach((c, i) => {
-        const cCenter = c.offsetLeft + c.clientWidth / 2;
-        const diff = Math.abs(center - cCenter);
-        if (diff < bestDiff) { bestDiff = diff; best = i; }
-      });
-      currentIndex = best;
-    }, 120);
-  });
-
-  // touch/pointer pausa auto-scroll e re-ajusta no end
-  let isPointerDown = false;
-  let startX = 0;
-  track.addEventListener('pointerdown', (e) => {
-    isPointerDown = true;
-    startX = e.clientX;
-    stopAutoScroll();
-    track.style.scrollBehavior = 'auto';
-    track.setPointerCapture && track.setPointerCapture(e.pointerId);
-  });
-  track.addEventListener('pointermove', (e) => {
-    if (!isPointerDown) return;
-    // permitir arrastar naturalmente (browser já lida com isso)
-  });
-  track.addEventListener('pointerup', (e) => {
-    if (!isPointerDown) return;
-    isPointerDown = false;
-    track.style.scrollBehavior = 'smooth';
-    // snap para o mais próximo
-    const center = track.scrollLeft + track.clientWidth / 2;
-    let best = 0, bestDiff = Infinity;
-    cards.forEach((c, i) => {
-      const cCenter = c.offsetLeft + c.clientWidth / 2;
-      const diff = Math.abs(center - cCenter);
-      if (diff < bestDiff) { bestDiff = diff; best = i; }
-    });
-    currentIndex = best;
-    scrollToIndex(currentIndex);
-    restartAutoScroll();
-  });
-
-  // fallback para touch events (alguns navegadores)
-  track.addEventListener('touchstart', () => { stopAutoScroll(); });
-  track.addEventListener('touchend', () => {
-    // snap to nearest after short delay
-    setTimeout(() => {
-      const center = track.scrollLeft + track.clientWidth / 2;
-      let best = 0, bestDiff = Infinity;
-      cards.forEach((c, i) => {
-        const cCenter = c.offsetLeft + c.clientWidth / 2;
-        const diff = Math.abs(center - cCenter);
-        if (diff < bestDiff) { bestDiff = diff; best = i; }
-      });
-      currentIndex = best;
-      scrollToIndex(currentIndex);
-      restartAutoScroll();
-    }, 120);
-  });
-
-  // AUTO-SCROLL (suave, sem pular)
-  let autoTimer = null;
-  function startAutoScroll() {
-    stopAutoScroll();
-    autoTimer = setInterval(() => {
-      currentIndex = (currentIndex + 1) % cards.length;
-      scrollToIndex(currentIndex);
-    }, 4500);
-  }
-  function stopAutoScroll() {
-    if (autoTimer) {
-      clearInterval(autoTimer);
-      autoTimer = null;
+  const cards = Array.from(track.querySelectorAll('.testimonial-card'));
+  const scrollToIndex = (index) => {
+    const card = cards[index];
+    if (card) {
+      const target = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+      track.scrollTo({ left: target, behavior: 'smooth' });
     }
-  }
-  function restartAutoScroll() {
-    stopAutoScroll();
-    // espera um pouco antes de reiniciar para não competir com o usuário
-    setTimeout(startAutoScroll, 1500);
-  }
+  };
 
-  // inicia centralizando o primeiro card e auto-scroll
-  scrollToIndex(currentIndex, 'auto');
-  startAutoScroll();
-
-  // recalcula quando a janela muda tamanho
-  window.addEventListener('resize', () => {
-    // refresh cards list and re-center current
-    cards = Array.from(track.querySelectorAll(cardsSelector));
-    scrollToIndex(currentIndex, 'auto');
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    scrollToIndex(currentIndex);
   });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    scrollToIndex(currentIndex);
+  });
+
+  // Auto-scroll suave
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    scrollToIndex(currentIndex);
+  }, 4500);
 });
 </script>
-
 
     <!-- Seção Garantia -->
     <section class="guarantee">
