@@ -107,306 +107,144 @@
 
 <!-- Seção Violão em Destaque -->
 <section class="featured-violao">
-    <div class="container">
-        <div class="violao-content">
-            <div class="violao-image">
-                <img src="images/imagem vioão 2.jpg" alt="Violão em Destaque">
-                <!-- Overlay gradiente de cima para baixo -->
-                <div class="image-overlay"></div>
-                <!-- Texto posicionado sobre a imagem -->
-                <div class="violao-text-overlay">
-                    <h2><span class="text-gradient">+30 partituras dos louvores mais tocados + playbacks</span><br>
-                    <p class="highlight-text">🎵 <strong>Coleção Completa</strong> dos louvores mais tocados + <strong>Bônus Especiais</strong> 🎵</p>
-
-                </div>
-            </div>
+  <div class="container">
+    <div class="violao-content">
+      <div class="violao-image">
+        <img src="images/imagem vioão 2.jpg" alt="Violão em Destaque">
+        <div class="image-overlay"></div>
+        <div class="violao-text-overlay">
+          <h2><span class="text-gradient">+30 partituras dos louvores mais tocados + playbacks</span></h2>
+          <p class="highlight-text">🎵 <strong>Coleção Completa</strong> dos louvores mais tocados + <strong>Bônus Especiais</strong> 🎵</p>
         </div>
+      </div>
     </div>
+  </div>
 
-    <style>
-        /* ============================
-           SEÇÃO VIOLÃO EM DESTAQUE
-        ============================ */
-        .featured-violao {
-            padding: 80px 20px 120px;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            position: relative;
-            overflow: visible;
-        }
+  <style>
+    .featured-violao {
+      padding: 80px 20px 120px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      position: relative;
+      overflow: visible;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .violao-image {
+      position: relative;
+      border-radius: 20px;
+      overflow: visible;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      height: 600px;
+      margin-bottom: 60px;
+    }
 
-        .violao-content {
-            position: relative;
-        }
+    .violao-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 20px;
+      transition: transform 0.5s ease;
+    }
 
-        .violao-image {
-            position: relative;
-            border-radius: 20px;
-            overflow: visible;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            height: 600px;
-            margin-bottom: 60px;
-        }
+    .violao-image:hover img {
+      transform: scale(1.05);
+    }
 
-        .violao-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-            border-radius: 20px;
-        }
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.4) 0%,
+        rgba(15, 23, 42, 0.2) 30%,
+        rgba(15, 23, 42, 0.8) 70%,
+        rgba(15, 23, 42, 0.95) 100%
+      );
+      z-index: 1;
+      border-radius: 20px;
+    }
 
-        .violao-image:hover img {
-            transform: scale(1.05);
-        }
+    .violao-text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      padding: 60px 40px 40px;
+      z-index: 2;
+      text-align: center;
+      transform: translateY(-50%);
+    }
 
-        /* Overlay gradiente de cima para baixo */
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(15, 23, 42, 0.4) 0%,
-                rgba(15, 23, 42, 0.2) 30%,
-                rgba(15, 23, 42, 0.8) 70%,
-                rgba(15, 23, 42, 0.95) 100%
-            );
-            z-index: 1;
-            border-radius: 20px;
-        }
+    .violao-text-overlay h2 {
+      color: #fff;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    }
 
-        /* Texto posicionado para começar na metade e ultrapassar para baixo */
-        .violao-text-overlay {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            padding: 60px 40px 40px;
-            z-index: 2;
-            text-align: center;
-        }
+    .text-gradient {
+      background: linear-gradient(135deg, #4aa8ff 0%, #60a5fa 50%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .violao-text-overlay h2 {
-            color: #ffffff;
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
+    .highlight-text {
+      color: #fbbf24;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: rgba(251, 191, 36, 0.1);
+      padding: 12px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      border: 2px solid rgba(251, 191, 36, 0.3);
+    }
 
-        .text-gradient {
-            background: linear-gradient(135deg, #4aa8ff 0%, #60a5fa 50%, #93c5fd 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            font-size: 3.2rem;
-            margin-bottom: 10px;
-        }
+    /* ===== MOBILE AJUSTE REAL ===== */
+    @media (max-width: 768px) {
+      .featured-violao {
+        padding: 0;
+      }
 
-        .highlight-text {
-            color: #fbbf24;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-            background: rgba(251, 191, 36, 0.1);
-            padding: 12px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            border: 2px solid rgba(251, 191, 36, 0.3);
-        }
+      .violao-image {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+      }
 
-        .subtitle {
-            color: #f87171;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 35px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            background: rgba(248, 113, 113, 0.1);
-            padding: 10px 20px;
-            border-radius: 10px;
-            display: inline-block;
-        }
+      .violao-image img,
+      .image-overlay {
+        border-radius: 0;
+      }
 
-        /* Botão de call-to-action melhorado */
-        .cta-button {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            background: linear-gradient(135deg, #4aa8ff 0%, #2563eb 100%);
-            color: white;
-            padding: 20px 45px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 15px 35px rgba(74, 168, 255, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
+      /* Aqui está o segredo: */
+      .violao-text-overlay {
+        bottom: -60px; /* joga o texto para fora da imagem */
+        top: auto;     /* desativa o top fixo */
+        transform: none;
+        position: absolute;
+      }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
+      .violao-text-overlay h2 {
+        font-size: 2rem;
+      }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
+      .text-gradient {
+        font-size: 2.4rem;
+      }
 
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(74, 168, 255, 0.6);
-            background: linear-gradient(135deg, #2563eb 0%, #4aa8ff 100%);
-        }
-
-        .cta-button:active {
-            transform: translateY(-2px) scale(1.02);
-        }
-
-        .btn-text {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
-        .btn-subtext {
-            font-size: 0.9rem;
-            font-weight: 500;
-            opacity: 0.9;
-        }
-
-        /* Efeitos de luz */
-        .light-effect {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(74, 168, 255, 0.3) 0%, rgba(74, 168, 255, 0) 70%);
-            filter: blur(25px);
-            z-index: 1;
-        }
-
-        .light-1 {
-            width: 400px;
-            height: 400px;
-            top: -150px;
-            right: -100px;
-            animation: float 8s infinite ease-in-out;
-        }
-
-        .light-2 {
-            width: 300px;
-            height: 300px;
-            bottom: -100px;
-            left: -100px;
-            animation: float 6s infinite ease-in-out reverse;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-                opacity: 0.4;
-            }
-            50% {
-                transform: translateY(-20px) scale(1.05);
-                opacity: 0.6;
-            }
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .featured-violao {
-                padding: 50px 15px 80px;
-            }
-
-            .violao-image {
-                height: 500px;
-                border-radius: 15px;
-                margin-bottom: 40px;
-            }
-
-            .violao-text-overlay {
-                padding: 40px 25px 30px;
-            }
-
-            .violao-text-overlay h2 {
-                font-size: 2.2rem;
-            }
-
-            .text-gradient {
-                font-size: 2.4rem;
-            }
-
-            .highlight-text {
-                font-size: 1.2rem;
-                padding: 10px 15px;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-                padding: 8px 15px;
-            }
-
-            .cta-button {
-                padding: 18px 35px;
-            }
-
-            .btn-text {
-                font-size: 1.1rem;
-            }
-
-            .light-1, .light-2 {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .featured-violao {
-                padding: 40px 15px 60px;
-            }
-
-            .violao-image {
-                height: 400px;
-                margin-bottom: 30px;
-            }
-
-            .violao-text-overlay h2 {
-                font-size: 1.8rem;
-            }
-
-            .text-gradient {
-                font-size: 2rem;
-            }
-
-            .highlight-text {
-                font-size: 1rem;
-            }
-
-            .subtitle {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+      .highlight-text {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </section>
-
-
-
 
 
 <!-- SEÇÃO INSTRUMENTOS -->
