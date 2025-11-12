@@ -190,17 +190,19 @@
       background: linear-gradient(135deg, #4aa8ff 0%, #60a5fa 50%, #93c5fd 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .highlight-text {
-      color: #fbbf24;
+      color: #10b981 !important; /* VERDE - força a cor */
       font-size: 1.5rem;
       font-weight: 600;
-      background: rgba(251, 191, 36, 0.1);
+      background: rgba(16, 185, 129, 0.15) !important; /* VERDE claro */
       padding: 12px 20px;
       border-radius: 50px;
       display: inline-block;
-      border: 2px solid rgba(251, 191, 36, 0.3);
+      border: 2px solid rgba(16, 185, 129, 0.4) !important; /* Borda VERDE */
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     }
 
     /* ===== MOBILE AJUSTE REAL ===== */
@@ -223,10 +225,9 @@
         border-radius: 0;
       }
 
-      /* Aqui está o segredo: */
       .violao-text-overlay {
-        bottom: -60px; /* joga o texto para fora da imagem */
-        top: auto;     /* desativa o top fixo */
+        bottom: -60px;
+        top: auto;
         transform: none;
         position: absolute;
       }
@@ -241,11 +242,13 @@
 
       .highlight-text {
         font-size: 1.2rem;
+        color: #10b981 !important; /* VERDE no mobile também */
+        background: rgba(16, 185, 129, 0.15) !important;
+        border: 2px solid rgba(16, 185, 129, 0.4) !important;
       }
     }
   </style>
 </section>
-
 
 <!-- SEÇÃO INSTRUMENTOS -->
 <section class="instrumentos-sec" id="instruments">
@@ -1316,8 +1319,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="images/GARANTIA.png" alt="Garantia de Satisfação">
                 </div>
                 <div class="guarantee-text">
-                    <h2>Garantia de Satisfação</h2>
-                    <p><span style="color: red;"> <strong>DEVOLVEREMOS cada centavo do seu DINHEIRO se não gostar do material preparado.</strong></span></p>
+                    <h2><strong>Garantia de Satisfação</strong></h2>
+                    <p><span style="color: rgb(15, 172, 41);"> <strong>DEVOLVEREMOS cada centavo do seu DINHEIRO se não gostar do material preparado.</strong></span></p>
                     <div class="guarantee-badge">
                         <span>100%</span>
                         <span>Garantia</span>
@@ -1649,12 +1652,8 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <div class="bonus-section">
-      <h3>🎁 Bônus Exclusivos</h3>
-      <div class="bonus-tracks">
-        <span>Perto Quero Estar (Te Louvarei) - Trazendo a Arca</span>
-        <span>Raridade - Anderson Freire</span>
-        <span>Aclame ao Senhor - Diante do Trono</span>
-      </div>
+      <h3>🎁 Bônus Exclusivos no MATERIAL</h3>
+  
     </div>
   </div>
 
