@@ -390,7 +390,7 @@
       background: #1C2738;
       color: #fff;
       text-align: center;
-      padding: 70px 15px;
+      padding: 30px 15px 70px; /* REDUZIDO: 70px para 30px no topo */
       position: relative;
       overflow: hidden;
     }
@@ -399,6 +399,7 @@
       color: #4aa8ff;
       font-size: 2rem;
       margin-bottom: 8px;
+      margin-top: 0; /* Garante que não tenha margem extra */
     }
 
     .instrumentos-sec .hint {
@@ -525,6 +526,10 @@
     }
 
     @media (max-width: 768px) {
+      .instrumentos-sec {
+        padding: 20px 15px 60px; /* REDUZIDO: 30px para 20px no topo no mobile */
+      }
+
       .instrumento-card {
         flex: 0 0 80%;
       }
