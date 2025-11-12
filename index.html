@@ -1681,366 +1681,117 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   </style>
-</section>
-
-
-    
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - Ofertas</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500,700,900|Sen:400,700|Work+Sans:100,300,500,700,900&display=swap" rel="stylesheet">
-    
-    <!-- CSS Customizado -->
-    <style>
-        /* SEU CSS AQUI - Cole todo o CSS que eu te enviei anteriormente */
-        :root {
-            --corUm: #7b5eea;
-            --corDois: #393e46;
-            --corTres: #00adb5;
-            --corQuatro: #eeeeee;
-        }
-        
-        .background-dark-blue-2 {
-            background-color: #1D283A;
-        }
-        
-        .color-pr {
-            color: #7b5eea !important;
-        }
-        
-        /* Produtos */
-        .product-card-oferta {
-            color: var(--corQuatro);
-            transform-style: preserve-3d;
-            background-color: #241650;
-            border-radius: 10px;
-            padding: 40px;
-            margin: 20px 0px 20px 0px;
-            position: relative;
-            height: 100%;
-        }
-
-        .product-valor-final {
-            font-size: 3em;
-            font-weight: bold;
-        }
-
-        .product-card-oferta:hover > .product-img > img {
-            transform: scale(1.3);
-        }
-
-        .product-desconto {
-            background-color: #00000066;
-            padding: 5px;
-            border-radius: 10px;
-            font-size: 0.9em;
-        }
-
-        .product-valor {
-            margin: 20px 0px 20px 0px;
-        }
-
-        .product-de {
-            font-size: 1.3em;
-            text-decoration: line-through;
-            color: #ccc;
-        }
-
-        span.big-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            letter-spacing: -7px;
-            margin: 0px;
-        }
-
-        .product-por {
-            font-size: 2em;
-        }
-
-        .product-valor-final {
-            font-weight: 300;
-            font-size: 2em;
-            margin-top: -23px;
-            margin-bottom: -15px;
-        }
-
-        .melhor-oferta {
-            background: #0000007d;
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-family: "Sen";
-            padding: 3px 10px 3px 10px;
-            border-radius: 0px 9px;
-            font-size: 11px;
-            z-index: 10;
-        }
-
-        .product-card-oferta h4 {
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 25px;
-            line-height: 25px;
-            font-family: "Work Sans", sans-serif;
-        }
-
-        .table-line {
-            position: relative;
-            width: 100%;
-            border-bottom: 1px solid #fff;
-            opacity: 0.4;
-        }
-
-        .product-entrega {
-            font-size: 0.75rem;
-            color: #ccc;
-        }
-
-        #oferta img {
-            width: 200px;
-            height: auto;
-            transition: all 0.4s ease-in-out;
-            transform: translateZ(50px);
-            z-index: 1000;
-        }
-
-        #oferta button {
-            transform: translateZ(20px);
-            transition: all 0.4s ease-in-out;
-            width: 100%;
-        }
-
-        .desconto {
-            background-color: var(--corUm);
-            padding: 5px;
-            border-radius: 10px;
-        }
-
-        .top-venda {
-            box-shadow: 0 8px 60px -6px rgba(123, 94, 234, 0.7);
-            background-color: #7b5eea !important;
-        }
-
-        .top-venda .btn-primary,
-        .top-venda .btn-primary:hover {
-            background-color: #fff !important;
-            color: #7b5eea;
-        }
-
-        .top-venda .product-entrega {
-            padding-top: 20px;
-        }
-
-        .por-pote {
-            background-color: #fff;
-            color: #333;
-            width: 90px;
-            height: 90px;
-            padding: 10px 0;
-            border-radius: 100%;
-            position: absolute;
-            right: 20px;
-            top: -20px;
-            z-index: 999999;
-            transform-style: preserve-3d;
-            animation: float-price 1s ease-in-out infinite;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-size: 12px;
-            line-height: 1.2;
-        }
-
-        .por-pote b {
-            font-size: 14px;
-        }
-
-        .product-img {
-            position: relative;
-            padding: 20px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 200px;
-        }
-
-        .percent-desconto {
-            background-color: #ffd640;
-            border-radius: 5px;
-            color: #000;
-            width: max-content;
-            padding: 5px 15px;
-            display: inline-flex;
-            margin: 0px 0px 15px 0px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .btn-primary {
-            background-color: #7b5eea !important;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.05);
-        }
-
-        @keyframes float-price {
-            0% {
-                transform: scale(1) translateZ(50px) rotate(10deg) translate(0px, 0px);
-            }
-            50% {
-                transform: scale(1.15) translateZ(50px) rotate(10deg) translate(0px, -5px);
-            }
-            100% {
-                transform: scale(1) translateZ(50px) rotate(10deg) translate(0px, 0px);
-            }
-        }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .product-card-oferta {
-                padding: 20px;
-                margin: 10px 0px;
-            }
-            
-            .por-pote {
-                right: 10px;
-                top: -15px;
-                width: 70px;
-                height: 70px;
-                font-size: 10px;
-            }
-            
-            .por-pote b {
-                font-size: 12px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Sessão Produtos Ofertas -->
-    <section id="oferta" class="background-dark-blue-2 py-5">
-        <div class="container">
+<!-- 💰 SEÇÃO OFERTAS COM CORES CORRIGIDAS -->
+<section id="oferta" class="background-dark-blue-2 py-5">
+  <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div class="title-wrap text-center mb-5">
-                <div class="back-title">Oferta</div>
-                <h4 class="text-white">Oportunidade Especial</h4>
-                <p class="color-pr">Aproveite os preços exclusivos do nosso site e escolha a melhor oferta para você!</p>
-            </div>
+      <div class="col-md-12 text-center mb-5">
+        <div class="title-wrap">
+          <h4 class="text-white fw-bold mb-2" style="font-size: 2rem;">
+            <span style="color: #4a90e2;">OFERTAS ESPECIAIS</span>
+          </h4>
+          <p class="color-pr" style="font-size: 1.1rem;">
+            Aproveite os preços exclusivos do nosso site e escolha a melhor oferta para você!
+          </p>
         </div>
+      </div>
     </div>
 
-            <div class="row">
-                <!-- Oferta 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="product-card-oferta h-100">
-                        <div class="product-qtd">
-                            <h4>Pacote 4 instrumentos</h4>
-                        </div>
-                        <div class="table-line mt-4 mb-4"></div>
-                                        <div class="product-img">
-    <div class="por-pote">
-        <b>R$ 69,90</b>
-        <label>o combo</label>
-    </div>
-    <img src="images/combos.png" alt="Pacote 3 Meses" class="img-combo">
-</div>
-                        <div class="table-line mt-4 mb-4"></div>
-                        <div class="product-desconto text-center">
-                            Contém os instrumentos  <br> flauta, sax alto, trompete e violino
-                        </div>
-                        <div class="product-valor text-center">
-                            <div class="product-por">
-                                POR <b>69,90</b>
-                            </div>
-                            <div class="product-valor-final">
-                                12x
-                                <span class="big-number">8</span>
-                                <span class="small-number">,13</span>
-                            </div>
-                        </div>
-                        <div class="product-btn mt-4">
-                            <button type="button" class="btn btn-primary" onclick="window.location.href='https://pay.cakto.com.br/cvhrqit_589543'">
-    Comprar Agora
-</button>
+    <div class="row justify-content-center">
+      <!-- OFERTA 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="product-card-oferta h-100" style="background-color: #203653 !important;">
+          <div class="product-qtd">
+            <h4>Pacote 4 instrumentos</h4>
+          </div>
+          <div class="table-line mt-4 mb-4"></div>
 
-                        </div>
-                        <div class="product-entrega text-center mt-3">
-                            Recebe o material em emediato após o pagamento*
-                        </div>
-                    </div>
-                </div>
-                <!-- /Oferta 1 -->
-
-                <!-- Oferta 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="product-card-oferta top-venda h-100">
-                        <div class="melhor-oferta">
-                            campeão de vendas
-                        </div>
-                        <div class="product-qtd">
-                            <h4>Pacote com 9 instrumentos </h4>
-                        </div>
-                        <div class="table-line mt-4 mb-4"></div>
-                        <div class="product-img">
-    <div class="por-pote">
-        <b>R$ 109,90</b>
-        <label>o combo</label>
-    </div>
-    <img src="images/combos.png" alt="Pacote 3 Meses" class="img-combo">
-</div>
-                        <div class="table-line mt-4 mb-4"></div>
-                        <div class="product-desconto text-center">
-                            Contém todos os 9 instrumentos
-                        </div>
-                        <div class="product-valor text-center">
-                            <div class="percent-desconto">
-                                64% DE DESCONTO
-                            </div>
-                            <div class="product-de">
-                                DE 298,90
-                            </div>
-                            <div class="product-por">
-                                POR <b>109,90</b>
-                            </div>
-                            <div class="product-valor-final">
-                                12x
-                                <span class="big-number">12</span>
-                                <span class="small-number">,78</span>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-primary" onclick="window.location.href='https://pay.cakto.com.br/ywaifmg_589577'">
-    <span style="color: white;">Comprar Agora</span>
-</button>
-
-                        <div class="product-entrega text-center mt-3">
-                            Recebe o material em emediato após o pagamento*
-                        </div>
-                    </div>
-                </div>
-                <!-- /Oferta 2 -->
-
-                <!-- /Oferta 3 -->
+          <div class="product-img">
+            <div class="por-pote">
+              <b>R$ 69,90</b>
+              <label>o combo</label>
             </div>
+            <img src="images/combos.png" alt="Pacote 4 instrumentos" class="img-combo">
+          </div>
+
+          <div class="table-line mt-4 mb-4"></div>
+          <div class="product-desconto text-center">
+            Contém os instrumentos <br> flauta, sax alto, trompete e violino
+          </div>
+
+          <div class="product-valor text-center">
+            <div class="product-por">
+              POR <b><span style="color: #22c55e;"><strong>69,90</strong></span></b>
+            </div>
+            <div class="product-valor-final">
+              12x
+              <span class="big-number">8</span>
+              <span class="small-number">,13</span>
+            </div>
+          </div>
+
+          <div class="product-btn mt-4">
+            <button type="button" class="btn btn-primary w-100"
+              onclick="window.location.href='https://pay.cakto.com.br/cvhrqit_589543'">
+              Comprar Agora
+            </button>
+          </div>
+
+          <div class="product-entrega text-center mt-3">
+            Recebe o material imediatamente após o pagamento*
+          </div>
         </div>
-    </section>
+      </div>
+
+      <!-- OFERTA 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="product-card-oferta top-venda h-100 position-relative" style="background-color: #223D5C !important;">
+          <div class="melhor-oferta">Campeão de vendas</div>
+
+          <div class="product-qtd">
+            <h4>Pacote com 9 instrumentos</h4>
+          </div>
+          <div class="table-line mt-4 mb-4"></div>
+
+          <div class="product-img">
+            <div class="por-pote">
+              <b>R$ 109,90</b>
+              <label>o combo</label>
+            </div>
+            <img src="images/combos.png" alt="Pacote 9 instrumentos" class="img-combo">
+          </div>
+
+          <div class="table-line mt-4 mb-4"></div>
+          <div class="product-desconto text-center">
+            Contém todos os 9 instrumentos
+          </div>
+
+          <div class="product-valor text-center">
+            <div class="percent-desconto">64% DE DESCONTO</div>
+            <div class="product-de">DE 298,90</div>
+            <div class="product-por">
+              POR <b><span style="color: #22c55e;"><strong>109,90</strong></span></b>
+            </div>
+            <div class="product-valor-final">
+              12x
+              <span class="big-number">12</span>
+              <span class="small-number">,78</span>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary w-100"
+            onclick="window.location.href='https://pay.cakto.com.br/ywaifmg_589577'">
+            <span style="color: white;">Comprar Agora</span>
+          </button>
+
+          <div class="product-entrega text-center mt-3">
+            Recebe o material imediatamente após o pagamento*
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -2075,7 +1826,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ============================ */
     .musics-carousel-section {
       padding: 80px 20px;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #0F172A 100%);
       position: relative;
       overflow: hidden;
     }
@@ -2109,7 +1860,7 @@ document.addEventListener('DOMContentLoaded', () => {
       position: relative;
       overflow: hidden;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.05);
+      background: #0F172A;
       border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 40px 0;
       margin-bottom: 50px;
