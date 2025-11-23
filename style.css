@@ -1116,3 +1116,19 @@ html, body {
     box-sizing: border-box;
     max-width: 100%;
 }
+/* Estilo do botão dentro da seção */
+.btn-see-music {
+    display: inline-block;
+    margin-top: 2px; /* distância do conteúdo acima */
+    padding: 12px 25px;
+    background-color: #17830d;
+    color: #000;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+.btn-see-music:hover {
+    transform: translateY(-3px);
+}
